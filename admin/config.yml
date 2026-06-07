@@ -1,0 +1,88 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Price (ZMW)", name: "price", widget: "number", value_type: "int" }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Product Image", name: "image", widget: "image" }
+      - { label: "Category", name: "category", widget: "select", options: ["case", "charger", "cable", "earphone", "powerbank", "protector"] }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "WhatsApp Message", name: "wa_message", widget: "string", default: "I'm interested in this product" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "homepage"
+        label: "Homepage Hero"
+        file: "content/settings/homepage.json"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Button Text", name: "btn_text", widget: "string", default: "Shop Now" }
+      
+      - name: "categories"
+        label: "Categories Section"
+        file: "content/settings/categories.json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "Icon Class", name: "icon", widget: "string", default: "fas fa-mobile-alt" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+      
+      - name: "features"
+        label: "Why Choose Us Section"
+        file: "content/settings/features.json"
+        fields:
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Icon Class", name: "icon", widget: "string", default: "fas fa-truck" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+      
+      - name: "footer"
+        label: "Footer Settings"
+        file: "content/settings/footer.json"
+        fields:
+          - { label: "Copyright Text", name: "copyright", widget: "string", default: "&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️" }
+          - { label: "Footer Links", name: "links", widget: "list", fields: [{ label: "Link Text", name: "text", widget: "string" }, { label: "Link URL", name: "url", widget: "string" }] }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "content/pages/about.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Content", name: "content", widget: "markdown" }
+          - label: "Our Promise Items"
+            name: "promises"
+            widget: "list"
+            field: { label: "Promise", name: "promise", widget: "string" }
+      
+      - name: "contact"
+        label: "Contact Page"
+        file: "content/pages/contact.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string", default: "+260979603741" }
+          - { label: "Phone Number", name: "phone", widget: "string", default: "+260979603741" }
+          - { label: "Location", name: "location", widget: "string", default: "Lusaka, Zambia" }
+          - { label: "Business Hours", name: "hours", widget: "string", default: "Mon-Sat: 9am - 6pm" }
+          - { label: "Email", name: "email", widget: "string", default: "singbless89@gmail.com" }
