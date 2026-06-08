@@ -37,7 +37,7 @@
     .btn-order { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; margin-top: 20px; }
     .back-link { display: inline-block; margin-top: 30px; color: #4a5568; text-decoration: none; }
     .back-link:hover { color: #ff6b6b; }
-    @media (max-width: 768px) { .product-detail { grid-template-columns: 1fr; gap: 20px; } .nav-links { display: none; } .mobile-toggle { display: block; } }
+    .loading { text-align: center; padding: 60px; color: #a0aec0; }
     .site-footer { background: #1a1a2e; color: #a0aec0; padding: 40px 0 20px; margin-top: 40px; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
     .footer-links-col h4 { color: white; margin-bottom: 16px; }
@@ -48,38 +48,113 @@
     .mobile-tab-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #e2e8f0; padding: 8px 0 12px; z-index: 9999; }
     .tab-bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #a0aec0; font-size: 0.7rem; }
     .tab-bar-item i { font-size: 1.2rem; }
-    @media (max-width: 768px) { .mobile-tab-bar { display: flex; } }
+    @media (max-width: 768px) { .mobile-tab-bar { display: flex; } .nav-links { display: none; } .mobile-toggle { display: block; } .product-detail { grid-template-columns: 1fr; gap: 20px; } }
   </style>
 </head>
 <body>
 
-  <header class="site-header"><div class="container header-inner"><a href="index.html" class="logo"><i class="fas fa-mobile-alt"></i><span class="logo-text">BLESS<span>Tech-ZM</span></span></a><nav class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Quote</a></nav><div class="header-actions"><a href="https://wa.me/260979603741" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a><button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button></div></div></header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><i class="fas fa-mobile-alt"></i><span class="logo-text">BLESS<span>Tech-ZM</span></span></a>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Quote</a></nav>
+      <div class="header-actions"><a href="https://wa.me/260979603741" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a><button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button></div>
+    </div>
+  </header>
+
   <div class="mobile-menu" id="mobileMenu"><button class="close-menu" id="closeMenuBtn">&times;</button><nav class="mobile-nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://wa.me/260979603741">WhatsApp</a></nav></div>
   <div class="menu-overlay" id="menuOverlay"></div>
 
-  <div class="container"><div class="product-detail" id="productDetail"></div></div>
+  <div class="container"><div class="product-detail" id="productDetail"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading product details...</div></div></div>
 
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p id="copyright">&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
 
   <div class="mobile-tab-bar"><a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a><a href="shop.html" class="tab-bar-item"><i class="fas fa-store"></i><span>Shop</span></a><a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a><a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
 
   <script>
+    // Mobile Menu
     const hamburger = document.getElementById('mobileToggle'); const mobileMenu = document.getElementById('mobileMenu'); const closeBtn = document.getElementById('closeMenuBtn'); const overlay = document.getElementById('menuOverlay');
     if (hamburger) hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; });
     function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
     if (closeBtn) closeBtn.addEventListener('click', closeMenu); if (overlay) overlay.addEventListener('click', closeMenu);
 
-    const products = [
-      { id: 1, name: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600", desc: "20W USB-C fast charger with overcharge protection. Compatible with all phones. Comes with 1-year warranty.", category: "charger" },
-      { id: 2, name: "Premium Phone Case", price: 100, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600", desc: "Shockproof, stylish design with raised edges for screen protection. Available in multiple colors.", category: "case" },
-      { id: 3, name: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600", desc: "Dual USB ports, fast charging, LED indicator. Charges an iPhone up to 3 times.", category: "powerbank" },
-      { id: 4, name: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600", desc: "Bluetooth 5.0, deep bass, 20-hour battery life. Includes charging case.", category: "earphone" }
-    ];
+    // Load footer
+    async function loadFooter() {
+      try {
+        const footerRes = await fetch('/content/settings/footer.json');
+        if (footerRes.ok) {
+          const footer = await footerRes.json();
+          document.getElementById('copyright').innerHTML = footer.copyright;
+        }
+      } catch(e) {}
+    }
+    loadFooter();
 
-    const urlParams = new URLSearchParams(window.location.search); const productId = parseInt(urlParams.get('id'));
-    const product = products.find(p => p.id === productId);
-    if (product) { document.getElementById('productDetail').innerHTML = `<div class="product-image"><img src="${product.image}" alt="${product.name}"></div><div class="product-info"><h1>${product.name}</h1><div class="product-price">ZMW ${product.price}</div><p class="product-desc">${product.desc}</p><a href="https://wa.me/260979603741?text=I'm%20interested%20in%20${encodeURIComponent(product.name)}" class="btn-order" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a><br><a href="shop.html" class="back-link">← Back to Shop</a></div>`; }
-    else { document.getElementById('productDetail').innerHTML = '<div style="text-align:center;padding:60px;"><h2>Product Not Found</h2><a href="shop.html">Back to Shop</a></div>'; }
+    // Load product from CMS by ID
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    async function loadProduct() {
+      const container = document.getElementById('productDetail');
+      if (!productId) {
+        container.innerHTML = '<div style="text-align:center; padding:60px;"><h2>No product selected</h2><a href="shop.html">Back to Shop</a></div>';
+        return;
+      }
+
+      try {
+        const res = await fetch(`/content/products/${productId}.md`);
+        if (!res.ok) throw new Error('Product not found');
+        const text = await res.text();
+        
+        // Parse markdown frontmatter
+        const match = text.match(/---\n([\s\S]*?)\n---/);
+        if (!match) throw new Error('Invalid product format');
+        
+        const frontmatter = match[1];
+        const titleMatch = frontmatter.match(/title:\s*(.+)/);
+        const priceMatch = frontmatter.match(/price:\s*(\d+)/);
+        const descMatch = frontmatter.match(/description:\s*(.+)/);
+        const imageMatch = frontmatter.match(/image:\s*(.+)/);
+        
+        const title = titleMatch ? titleMatch[1].trim() : 'Product';
+        const price = priceMatch ? priceMatch[1] : '0';
+        const description = descMatch ? descMatch[1].trim() : 'No description available';
+        const image = imageMatch ? imageMatch[1].trim() : 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600';
+        
+        container.innerHTML = `
+          <div class="product-image"><img src="${image}" alt="${title}"></div>
+          <div class="product-info">
+            <h1>${title}</h1>
+            <div class="product-price">ZMW ${price}</div>
+            <p class="product-desc">${description}</p>
+            <a href="https://wa.me/260979603741?text=I'm%20interested%20in%20${encodeURIComponent(title)}" class="btn-order" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            <br><a href="shop.html" class="back-link">← Back to Shop</a>
+          </div>
+        `;
+      } catch(e) {
+        console.log('Product not found in CMS, using fallback');
+        const fallbackProducts = {
+          1: { title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600", description: "20W USB-C fast charger with overcharge protection. Compatible with all phones." },
+          2: { title: "Premium Phone Case", price: 100, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600", description: "Shockproof, stylish design with raised edges for screen protection." }
+        };
+        const product = fallbackProducts[productId];
+        if (product) {
+          container.innerHTML = `
+            <div class="product-image"><img src="${product.image}" alt="${product.title}"></div>
+            <div class="product-info">
+              <h1>${product.title}</h1>
+              <div class="product-price">ZMW ${product.price}</div>
+              <p class="product-desc">${product.description}</p>
+              <a href="https://wa.me/260979603741?text=I'm%20interested%20in%20${encodeURIComponent(product.title)}" class="btn-order" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+              <br><a href="shop.html" class="back-link">← Back to Shop</a>
+            </div>
+          `;
+        } else {
+          container.innerHTML = '<div style="text-align:center; padding:60px;"><h2>Product Not Found</h2><a href="shop.html">Back to Shop</a></div>';
+        }
+      }
+    }
+
+    loadProduct();
   </script>
 </body>
 </html>
