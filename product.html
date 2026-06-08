@@ -4,277 +4,180 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Product – BLESSTech-ZM Accessories</title>
-<meta name="description" content="View product details for phone accessories at BLESSTech-ZM. Quality cases, chargers, cables, earphones, power banks in Lusaka, Zambia.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
 
   :root {
-    --c1:#ff6b6b;--c2:#feca57;--c3:#48dbfb;--c4:#ff9ff3;--c5:#54a0ff;--c6:#5f27cd;
-    --white:#ffffff;--dark:#0f0f1a;--text:#1a1a2e;--muted:#6b7280;--light:#f8f9ff;
-    --grad:linear-gradient(135deg,#ff6b6b,#feca57,#48dbfb,#ff9ff3,#54a0ff,#5f27cd);
-    --grad2:linear-gradient(135deg,#ff6b6b 0%,#feca57 50%,#48dbfb 100%);
-    --shadow:0 4px 24px rgba(0,0,0,0.08);--shadow-lg:0 8px 48px rgba(0,0,0,0.14);
-    --radius:16px;--nav-h:64px;--bottom-nav-h:70px;
+    --c1: #ff6b6b; --c2: #feca57; --c3: #48dbfb; --c4: #ff9ff3; --c5: #54a0ff; --c6: #5f27cd;
+    --white: #ffffff; --dark: #0f0f1a; --text: #1a1a2e; --muted: #6b7280; --light: #f8f9ff;
+    --grad: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, #5f27cd);
+    --grad2: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
+    --shadow: 0 4px 24px rgba(0,0,0,0.08); --shadow-lg: 0 8px 48px rgba(0,0,0,0.14);
+    --radius: 16px; --nav-h: 64px; --bottom-nav-h: 70px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);padding-bottom:var(--bottom-nav-h);}
 
-  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);height:var(--nav-h);display:flex;align-items:center;}
-  .header-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .logo-icon{width:40px;height:40px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:white;font-size:18px;}
-  .logo-text{display:flex;flex-direction:column;line-height:1.1;}
-  .logo-name{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--text);letter-spacing:-0.3px;}
-  .logo-sub{font-size:10px;color:var(--muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;}
-  nav a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);padding:8px 14px;border-radius:8px;transition:all 0.2s;}
-  nav a:hover,nav a.active{color:var(--text);background:var(--light);}
-  .nav-whatsapp{display:flex;align-items:center;gap:6px;background:#25d366!important;color:white!important;border-radius:10px!important;padding:8px 16px!important;font-weight:600!important;}
-  .hamburger{display:none;background:none;border:none;cursor:pointer;font-size:22px;color:var(--text);}
-  .mobile-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:white;border-bottom:1px solid rgba(0,0,0,0.08);padding:16px 20px;z-index:99;flex-direction:column;gap:4px;box-shadow:var(--shadow-lg);}
-  .mobile-nav.open{display:flex;}
-  .mobile-nav a{padding:12px 16px;border-radius:10px;font-size:15px;font-weight:500;color:var(--text);text-decoration:none;}
-  .mobile-nav a:hover{background:var(--light);}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); padding-bottom: var(--bottom-nav-h); }
 
-  .breadcrumb{background:var(--light);padding:14px 20px;border-bottom:1px solid rgba(0,0,0,0.05);}
-  .breadcrumb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
-  .breadcrumb a{color:var(--c5);text-decoration:none;font-weight:500;}
-  .breadcrumb a:hover{text-decoration:underline;}
-  .breadcrumb i{font-size:10px;}
+  header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); height: var(--nav-h); display: flex; align-items: center; }
+  .header-inner { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--grad); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; transition: var(--transition); }
+  .logo:hover .logo-icon { transform: scale(1.05); }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: var(--text); letter-spacing: -0.3px; }
+  .logo-sub { font-size: 10px; color: var(--muted); font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; }
+  nav { display: flex; gap: 4px; align-items: center; }
+  nav a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--muted); padding: 8px 14px; border-radius: 8px; transition: var(--transition); }
+  nav a:hover, nav a.active { color: var(--text); background: var(--light); }
+  .nav-whatsapp { display: flex; align-items: center; gap: 6px; background: #25d366 !important; color: white !important; border-radius: 10px !important; padding: 8px 16px !important; font-weight: 600 !important; }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: var(--text); }
+  .mobile-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: white; border-bottom: 1px solid rgba(0,0,0,0.08); padding: 16px 20px; z-index: 99; flex-direction: column; gap: 4px; box-shadow: var(--shadow-lg); }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { padding: 12px 16px; border-radius: 10px; font-size: 15px; font-weight: 500; color: var(--text); text-decoration: none; }
 
-  .product-body{max-width:1200px;margin:0 auto;padding:48px 20px;}
-  .product-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .breadcrumb { background: var(--light); padding: 14px 20px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .breadcrumb a { color: var(--c5); text-decoration: none; font-weight: 500; }
+  .product-body { max-width: 1200px; margin: 0 auto; padding: 48px 20px; }
+  .product-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .product-main-img { width: 100%; aspect-ratio: 1; background: var(--light); border-radius: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px solid rgba(0,0,0,0.06); position: relative; }
+  .product-main-img img { width: 100%; height: 100%; object-fit: cover; }
+  .product-main-img .placeholder-icon { font-size: 100px; opacity: 0.25; }
+  .product-cat-pill { position: absolute; top: 16px; left: 16px; padding: 5px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: white; }
+  .product-cat-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--c5); margin-bottom: 12px; }
+  .product-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3.5vw, 2.4rem); color: var(--text); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; }
+  .product-price-big { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+  .price-note { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+  .quick-features { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+  .qf-item { display: flex; align-items: center; gap: 7px; background: var(--light); border-radius: 10px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: var(--text); }
+  .qf-item i { color: var(--c5); }
+  .desc-block { background: var(--light); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; }
+  .desc-block h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 12px; }
+  .desc-block p { font-size: 15px; line-height: 1.8; color: var(--muted); }
+  .cta-group { display: flex; flex-direction: column; gap: 12px; }
+  .btn-wa-order { display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #128c7e, #25d366); color: white; text-decoration: none; font-weight: 700; font-size: 17px; padding: 18px 32px; border-radius: 14px; transition: var(--transition); box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  .btn-wa-order:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+  .btn-back { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--light); color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px; padding: 14px 24px; border-radius: 12px; transition: var(--transition); }
+  .btn-back:hover { background: #e9ecef; }
+  .trust-badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+  .trust-badge { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; background: var(--light); border-radius: 12px; padding: 14px 10px; }
+  .trust-badge i { font-size: 20px; }
+  .trust-badge span { font-size: 11px; font-weight: 600; color: var(--muted); }
+  .related-section { max-width: 1200px; margin: 0 auto; padding: 0 20px 56px; }
+  .section-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--c1); margin-bottom: 10px; }
+  .section-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.4rem, 3vw, 2rem); color: var(--text); letter-spacing: -0.3px; margin-bottom: 28px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+  .product-card-sm { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.06); transition: var(--transition); text-decoration: none; color: inherit; display: block; }
+  .product-card-sm:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+  .pc-img-sm { height: 160px; background: var(--light); display: flex; align-items: center; justify-content: center; font-size: 48px; opacity: 0.35; }
+  .pc-img-sm img { width: 100%; height: 100%; object-fit: cover; opacity: 1; }
+  .pc-info-sm { padding: 14px; }
+  .pc-name-sm { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+  .pc-price-sm { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .not-found { text-align: center; padding: 80px 20px; max-width: 500px; margin: 0 auto; }
+  .not-found .nf-icon { font-size: 72px; margin-bottom: 20px; }
+  .not-found h2 { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+  .not-found p { font-size: 15px; color: var(--muted); margin-bottom: 28px; }
 
-  .product-main-img{width:100%;aspect-ratio:1;background:var(--light);border-radius:24px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px solid rgba(0,0,0,0.06);position:relative;}
-  .product-main-img img{width:100%;height:100%;object-fit:cover;}
-  .product-main-img .placeholder-icon{font-size:100px;opacity:0.25;}
-  .product-cat-pill{position:absolute;top:16px;left:16px;padding:5px 14px;border-radius:100px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:white;}
+  footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 56px 20px 32px; margin-top: 40px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .footer-logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: white; margin-bottom: 12px; display: block; }
+  .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 260px; margin-bottom: 20px; }
+  .social-links { display: flex; gap: 12px; }
+  .social-link { width: 38px; height: 38px; border-radius: 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 15px; transition: var(--transition); }
+  .social-link:hover { background: var(--c5); border-color: var(--c5); color: white; transform: translateY(-3px); }
+  .footer-col h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: white; margin-bottom: 18px; }
+  .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; padding: 5px 0; transition: var(--transition); }
+  .footer-col a:hover { color: white; transform: translateX(3px); }
+  .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; }
 
-  .product-cat-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--c5);margin-bottom:12px;}
-  .product-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3.5vw,2.4rem);color:var(--text);line-height:1.1;letter-spacing:-0.5px;margin-bottom:20px;}
-  .product-price-big{font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
-  .price-note{font-size:13px;color:var(--muted);margin-bottom:28px;}
+  .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; height: var(--bottom-nav-h); background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); border-top: 1px solid rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: space-around; z-index: 100; box-shadow: 0 -4px 24px rgba(0,0,0,0.06); }
+  .bn-item { display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: 0.3px; text-transform: uppercase; transition: var(--transition); padding: 6px 12px; border-radius: 12px; flex: 1; max-width: 80px; }
+  .bn-item i { font-size: 20px; transition: var(--transition); }
+  .bn-item:hover, .bn-item.active { color: var(--c5); }
+  .bn-item:hover i, .bn-item.active i { transform: translateY(-3px); }
+  .bn-wa { background: linear-gradient(135deg, #128c7e, #25d366) !important; color: white !important; border-radius: 20px !important; padding: 10px 18px !important; box-shadow: 0 4px 16px rgba(37,211,102,0.4); max-width: 90px !important; }
 
-  .quick-features{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
-  .qf-item{display:flex;align-items:center;gap:7px;background:var(--light);border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--text);}
-  .qf-item i{color:var(--c5);}
-
-  .desc-block{background:var(--light);border-radius:var(--radius);padding:24px;margin-bottom:28px;}
-  .desc-block h3{font-family:'Syne',sans-serif;font-weight:700;font-size:15px;color:var(--text);margin-bottom:12px;}
-  .desc-block p{font-size:15px;line-height:1.8;color:var(--muted);}
-
-  .cta-group{display:flex;flex-direction:column;gap:12px;}
-  .btn-wa-order{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#128c7e,#25d366);color:white;text-decoration:none;font-weight:700;font-size:17px;padding:18px 32px;border-radius:14px;transition:all 0.3s;box-shadow:0 4px 20px rgba(37,211,102,0.4);}
-  .btn-wa-order:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.5);}
-  .btn-wa-order i{font-size:22px;}
-  .btn-back{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--light);color:var(--text);text-decoration:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:12px;transition:all 0.2s;}
-  .btn-back:hover{background:#e9ecef;}
-
-  .trust-badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;}
-  .trust-badge{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;background:var(--light);border-radius:12px;padding:14px 10px;}
-  .trust-badge i{font-size:20px;}
-  .trust-badge span{font-size:11px;font-weight:600;color:var(--muted);}
-
-  .related-section{max-width:1200px;margin:0 auto;padding:0 20px 56px;}
-  .section-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--c1);margin-bottom:10px;}
-  .section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.4rem,3vw,2rem);color:var(--text);letter-spacing:-0.3px;margin-bottom:28px;}
-  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
-  .product-card{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.06);transition:all 0.3s;text-decoration:none;color:inherit;display:block;}
-  .product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
-  .pc-img{height:160px;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:48px;opacity:0.35;}
-  .pc-img img{width:100%;height:100%;object-fit:cover;opacity:1;}
-  .pc-info{padding:14px;}
-  .pc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:var(--text);margin-bottom:8px;line-height:1.3;}
-  .pc-price{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-
-  .not-found{text-align:center;padding:80px 20px;max-width:500px;margin:0 auto;}
-  .not-found .nf-icon{font-size:72px;margin-bottom:20px;}
-  .not-found h2{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--text);margin-bottom:12px;}
-  .not-found p{font-size:15px;color:var(--muted);margin-bottom:28px;}
-
-  footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:56px 20px 32px;}
-  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
-  .footer-logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:white;margin-bottom:12px;display:block;}
-  .footer-brand p{font-size:14px;line-height:1.7;max-width:260px;margin-bottom:20px;}
-  .social-links{display:flex;gap:10px;}
-  .social-link{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;font-size:15px;transition:all 0.2s;}
-  .social-link:hover{background:var(--c5);border-color:var(--c5);color:white;}
-  .footer-col h4{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:white;margin-bottom:16px;}
-  .footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;padding:4px 0;transition:color 0.2s;}
-  .footer-col a:hover{color:white;}
-  .footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  .footer-bottom p{font-size:13px;color:rgba(255,255,255,0.35);}
-
-  .bottom-nav{position:fixed;bottom:0;left:0;right:0;height:var(--bottom-nav-h);background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-top:1px solid rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-around;z-index:100;box-shadow:0 -4px 24px rgba(0,0,0,0.06);}
-  .bn-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;transition:all 0.2s;padding:6px 12px;border-radius:12px;flex:1;max-width:80px;}
-  .bn-item i{font-size:20px;transition:all 0.2s;}
-  .bn-item:hover,.bn-item.active{color:var(--c5);}
-  .bn-item:hover i,.bn-item.active i{transform:translateY(-2px);}
-  .bn-wa{background:linear-gradient(135deg,#128c7e,#25d366)!important;color:white!important;border-radius:16px!important;padding:10px 18px!important;box-shadow:0 4px 16px rgba(37,211,102,0.4);max-width:90px!important;}
-  .bn-wa:hover{transform:scale(1.05);}
-
-  @media(max-width:900px){nav{display:none;}.hamburger{display:block;}.product-layout{grid-template-columns:1fr;gap:32px;}.footer-inner{grid-template-columns:1fr 1fr;}}
-  @media(max-width:600px){.trust-badges{grid-template-columns:repeat(3,1fr);}.related-grid{grid-template-columns:repeat(2,1fr);}.footer-inner{grid-template-columns:1fr;}}
+  @media (max-width: 900px) { nav { display: none; } .hamburger { display: block; } .product-layout { grid-template-columns: 1fr; gap: 32px; } .footer-inner { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .trust-badges { grid-template-columns: repeat(3, 1fr); } .related-grid { grid-template-columns: repeat(2, 1fr); } .footer-inner { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <a class="logo" href="index.html">
-      <div class="logo-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-      <div class="logo-text"><span class="logo-name">BLESSTech-ZM</span><span class="logo-sub">Accessories</span></div>
-    </a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://wa.me/260979603741?text=Hi!%20I'm%20interested%20in%20your%20phone%20accessories." target="_blank" class="nav-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
-    </nav>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><i class="fa-solid fa-bars" id="ham-icon"></i></button>
+    <a class="logo" href="index.html"><div class="logo-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="logo-text"><span class="logo-name">BLESSTech-ZM</span><span class="logo-sub">Accessories</span></div></a>
+    <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://wa.me/260979603741?text=Hi!%20I'm%20interested%20in%20your%20phone%20accessories." target="_blank" class="nav-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order Now</a></nav>
+    <button class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars" id="ham-icon"></i></button>
   </div>
 </header>
 
 <div class="mobile-nav" id="mobile-nav">
-  <a href="index.html" onclick="toggleMenu()"><i class="fa-solid fa-house" style="width:20px;margin-right:8px"></i>Home</a>
-  <a href="shop.html" onclick="toggleMenu()"><i class="fa-solid fa-bag-shopping" style="width:20px;margin-right:8px"></i>Shop</a>
-  <a href="about.html" onclick="toggleMenu()"><i class="fa-solid fa-circle-info" style="width:20px;margin-right:8px"></i>About</a>
-  <a href="contact.html" onclick="toggleMenu()"><i class="fa-solid fa-envelope" style="width:20px;margin-right:8px"></i>Contact</a>
-  <a href="https://wa.me/260979603741" target="_blank" style="background:#25d366;color:white;border-radius:12px;margin-top:8px"><i class="fa-brands fa-whatsapp" style="width:20px;margin-right:8px"></i>Order on WhatsApp</a>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="shop.html" onclick="toggleMenu()">Shop</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="https://wa.me/260979603741" target="_blank" style="background:#25d366;color:white;border-radius:12px;margin-top:8px">Order on WhatsApp</a>
 </div>
 
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="index.html">Home</a>
-    <i class="fa-solid fa-chevron-right"></i>
-    <a href="shop.html">Shop</a>
-    <i class="fa-solid fa-chevron-right"></i>
-    <span id="bc-name">Product</span>
-  </div>
-</div>
+<div class="breadcrumb"><div class="breadcrumb-inner"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><a href="shop.html">Shop</a><i class="fa-solid fa-chevron-right"></i><span id="bc-name">Product</span></div></div>
 
-<div id="productContent" class="product-body">
-  <div style="text-align:center;padding:60px 20px;color:var(--muted)">
-    <i class="fa-solid fa-spinner fa-spin" style="font-size:32px;margin-bottom:16px;display:block"></i>
-    Loading product...
-  </div>
-</div>
+<div id="productContent" class="product-body"><div style="text-align:center;padding:60px;color:var(--muted)"><i class="fa-solid fa-spinner fa-spin" style="font-size:32px;margin-bottom:16px;display:block"></i>Loading product...</div></div>
 
-<section class="related-section" id="relatedSection" style="display:none">
-  <div class="section-tag">More Like This</div>
-  <div class="section-title">Related Products</div>
-  <div class="related-grid" id="relatedGrid"></div>
-</section>
-
-<footer>
+<footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="footer-logo-text">BLESSTech-ZM 📱</span>
-      <p>Your #1 source for premium phone accessories in Lusaka, Zambia.</p>
-      <div class="social-links">
-        <a href="https://wa.me/260979603741" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </div>
+    <div class="footer-brand"><span class="footer-logo-text">BLESSTech-ZM 📱</span><p>Your #1 source for premium phone accessories in Lusaka, Zambia.</p></div>
     <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-    <div class="footer-col"><h4>Categories</h4><a href="shop.html?cat=case">Cases</a><a href="shop.html?cat=charger">Chargers</a><a href="shop.html?cat=cable">Cables</a><a href="shop.html?cat=earphone">Earphones</a><a href="shop.html?cat=powerbank">Power Banks</a></div>
-    <div class="footer-col"><h4>Contact</h4><a href="https://wa.me/260979603741"><i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>+260 979 603 741</a><a href="contact.html"><i class="fa-solid fa-location-dot" style="margin-right:6px"></i>Lusaka, Zambia</a></div>
+    <div class="footer-col"><h4>Categories</h4><a href="shop.html?cat=case">Cases</a><a href="shop.html?cat=charger">Chargers</a><a href="shop.html?cat=cable">Cables</a><a href="shop.html?cat=earphone">Earphones</a><a href="shop.html?cat=powerbank">Power Banks</a><a href="shop.html?cat=protector">Protectors</a><a href="shop.html?cat=phone">Phones</a><a href="shop.html?cat=other">Other</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="https://wa.me/260979603741"><i class="fa-brands fa-whatsapp"></i> +260 979 603 741</a><a href="contact.html"><i class="fa-solid fa-location-dot"></i> Lusaka, Zambia</a></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 BLESSTech-ZM Accessories. All rights reserved.</p>
-    <p>Built with ❤️ in Lusaka, Zambia | Jesus loves you. ❤️</p>
-  </div>
+  <div class="footer-bottom"><p>© 2026 BLESSTech-ZM Accessories | Jesus loves you. ❤️</p></div>
 </footer>
 
 <nav class="bottom-nav">
   <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
-  <a href="shop.html" class="bn-item active"><i class="fa-solid fa-bag-shopping"></i>Shop</a>
-  <a href="https://wa.me/260979603741?text=Hi!%20I'd%20like%20to%20order%20phone%20accessories." target="_blank" class="bn-item bn-wa"><i class="fa-brands fa-whatsapp"></i>Order</a>
+  <a href="shop.html" class="bn-item"><i class="fa-solid fa-bag-shopping"></i>Shop</a>
+  <a href="https://wa.me/260979603741" target="_blank" class="bn-item bn-wa"><i class="fa-brands fa-whatsapp"></i>Order</a>
   <a href="contact.html" class="bn-item"><i class="fa-solid fa-envelope"></i>Contact</a>
 </nav>
 
 <script>
-function toggleMenu(){const nav=document.getElementById('mobile-nav');const icon=document.getElementById('ham-icon');const open=nav.classList.toggle('open');icon.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+function toggleMenu() { const nav = document.getElementById('mobile-nav'); const icon = document.getElementById('ham-icon'); const open = nav.classList.toggle('open'); icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'; }
 
-const CAT_COLORS={case:'linear-gradient(135deg,#54a0ff,#5f27cd)',charger:'linear-gradient(135deg,#feca57,#ff6b6b)',cable:'linear-gradient(135deg,#48dbfb,#54a0ff)',earphone:'linear-gradient(135deg,#ff9ff3,#ff6b6b)',powerbank:'linear-gradient(135deg,#5f27cd,#48dbfb)',protector:'linear-gradient(135deg,#48dbfb,#ff9ff3)'};
-const CAT_ICONS={case:'📱',charger:'⚡',cable:'🔌',earphone:'🎧',powerbank:'🔋',protector:'🛡️',default:'🛍️'};
+const CAT_ICONS = { case:'📱', charger:'⚡', cable:'🔌', earphone:'🎧', powerbank:'🔋', protector:'🛡️', phone:'📱', other:'🔧', default:'🛍️' };
+const CAT_COLORS = { case:'linear-gradient(135deg,#54a0ff,#5f27cd)', charger:'linear-gradient(135deg,#feca57,#ff6b6b)', cable:'linear-gradient(135deg,#48dbfb,#54a0ff)', earphone:'linear-gradient(135deg,#ff9ff3,#ff6b6b)', powerbank:'linear-gradient(135deg,#5f27cd,#48dbfb)', protector:'linear-gradient(135deg,#48dbfb,#ff9ff3)', phone:'linear-gradient(135deg,#ff6b6b,#54a0ff)', other:'linear-gradient(135deg,#c5c5c5,#999)' };
 
-const DEMO=[
-  {slug:'clear-slim-case',title:'Clear Slim Case',price:85,category:'case',image:'',description:'Ultra-thin transparent back case for full protection without the bulk. Made from premium TPU material that resists yellowing. Compatible with wireless charging.'},
-  {slug:'shockproof-armor-case',title:'Shockproof Armor Case',price:130,category:'case',image:'',description:'Military-grade drop protection with air cushion corners. Dual-layer hybrid design with TPU inner frame and PC outer shell. Passed MIL-STD-810G drop test.'},
-  {slug:'leather-wallet-case',title:'Leather Wallet Case',price:175,category:'case',image:'',description:'Premium leather flip case with 3 card slots and a cash pocket. Magnetic closure. Full 360-degree protection.'},
-  {slug:'20w-fast-charger',title:'20W USB-C Fast Charger',price:150,category:'charger',image:'',description:'GaN technology fast charger compatible with iPhone (PD) and Android (PPS). Ultra-compact design. Includes USB-C cable.'},
-  {slug:'65w-pd-charger',title:'65W PD Charger',price:280,category:'charger',image:'',description:'Ultra-fast triple-port charger (USB-C + 2x USB-A). Charge your laptop, phone and tablet simultaneously. Foldable plug for easy travel.'},
-  {slug:'wireless-charger-15w',title:'15W Wireless Charger Pad',price:220,category:'charger',image:'',description:'Qi-certified 15W wireless charging pad. Compatible with all Qi-enabled devices. Anti-slip surface. LED indicator.'},
-  {slug:'braided-usb-c-cable',title:'Braided USB-C Cable 1.5m',price:60,category:'cable',image:'',description:'Premium nylon braided cable with 100W fast charging support. Extra durable with reinforced connectors. 1.5 metre length.'},
-  {slug:'lightning-cable',title:'MFi Lightning Cable',price:75,category:'cable',image:'',description:'Apple MFi certified Lightning cable. 1.2m length. Braided design for extra durability.'},
-  {slug:'3-in-1-cable',title:'3-in-1 Charging Cable',price:95,category:'cable',image:'',description:'One cable with three connectors: USB-C, Lightning and Micro-USB. Never worry about having the wrong cable again.'},
-  {slug:'tws-earbuds',title:'TWS Wireless Earbuds',price:380,category:'earphone',image:'',description:'True wireless earbuds with active noise cancellation, 20-hour total battery life (6hr + 14hr case), and IPX5 water resistance. Bluetooth 5.3.'},
-  {slug:'wired-earphones-bass',title:'Bass Boost Earphones',price:120,category:'earphone',image:'',description:'Deep bass wired earphones with in-line microphone and remote. Compatible with 3.5mm jack. Ergonomic design for all-day comfort.'},
-  {slug:'sport-earphones',title:'Sport Hook Earphones',price:160,category:'earphone',image:'',description:'Sweat-proof sport earphones with secure over-ear hooks. IPX4 rating. Magnetic connection when not in use.'},
-  {slug:'10000mah-powerbank',title:'10000mAh Power Bank',price:420,category:'powerbank',image:'',description:'Compact 10000mAh power bank with dual USB output and LED charge indicator. Charges most smartphones 2–3 times. Slim pocket-friendly design.'},
-  {slug:'20000mah-powerbank',title:'20000mAh Power Bank',price:680,category:'powerbank',image:'',description:'High-capacity 20000mAh power bank with USB-C fast charging input, 2x USB-A output, and digital display. For heavy users and travellers.'},
-  {slug:'tempered-glass',title:'9H Tempered Glass Protector',price:45,category:'protector',image:'',description:'Anti-scratch 9H hardness tempered glass screen protector. Case-friendly, bubble-free installation with alignment frame.'},
-  {slug:'privacy-screen-protector',title:'Privacy Screen Protector',price:80,category:'protector',image:'',description:'Anti-spy privacy filter + 9H hardness tempered glass. View is clear from front, dark from side angles. Matte anti-glare finish.'}
-];
-
-async function init() {
+async function loadProduct() {
   const id = new URLSearchParams(window.location.search).get('id');
   if (!id) { showNotFound(); return; }
 
-  let products = [];
   try {
-    const idxRes = await fetch('/content/products/index.json');
-    if (idxRes.ok) {
-      const files = await idxRes.json();
-      products = await Promise.all(files.map(async f => {
-        const res = await fetch(`/content/products/${f}`);
-        const text = await res.text();
-        const titleMatch = text.match(/title:\s*(.+)/);
-        const priceMatch = text.match(/price:\s*(\d+)/);
-        const descMatch = text.match(/description:\s*(.+)/);
-        const imageMatch = text.match(/image:\s*(.+)/);
-        const catMatch = text.match(/category:\s*(.+)/);
-        return {
-          slug: f.replace('.md', ''),
-          title: titleMatch ? titleMatch[1].trim() : 'Product',
-          price: priceMatch ? parseInt(priceMatch[1]) : 0,
-          description: descMatch ? descMatch[1].trim() : '',
-          image: imageMatch ? imageMatch[1].trim() : '',
-          category: catMatch ? catMatch[1].trim() : 'other'
-        };
-      }));
-    }
-  } catch(e) { console.log('Loading demo products'); }
-
-  if (!products.length) products = DEMO;
-
-  const product = products.find(p => p.slug === id);
-  if (!product) { showNotFound(); return; }
-
-  document.title = `${product.title} – BLESSTech-ZM Accessories`;
-  document.getElementById('bc-name').textContent = product.title;
-
-  renderProduct(product);
-
-  const related = products.filter(p => p.category === product.category && p.slug !== id).slice(0, 4);
-  if (related.length) {
-    document.getElementById('relatedSection').style.display = 'block';
-    document.getElementById('relatedGrid').innerHTML = related.map(p => {
-      const icon = CAT_ICONS[p.category] || CAT_ICONS.default;
-      return `<a class="product-card" href="product.html?id=${p.slug}">
-        <div class="pc-img">${p.image ? `<img src="${p.image}" alt="${p.title}" loading="lazy">` : `<span style="font-size:40px;">${icon}</span>`}</div>
-        <div class="pc-info"><div class="pc-name">${escapeHtml(p.title)}</div><div class="pc-price">ZMW ${Number(p.price).toLocaleString()}</div></div>
-      </a>`;
-    }).join('');
-  }
+    const res = await fetch(`/content/products/${id}.md`);
+    if (!res.ok) throw new Error('Not found');
+    const text = await res.text();
+    const titleMatch = text.match(/title:\s*(.+)/);
+    const priceMatch = text.match(/price:\s*(\d+)/);
+    const catMatch = text.match(/category:\s*(.+)/);
+    const imageMatch = text.match(/image:\s*(.+)/);
+    const descMatch = text.match(/description:\s*(.+)/);
+    
+    const product = {
+      title: titleMatch ? titleMatch[1].trim() : 'Product',
+      price: priceMatch ? parseInt(priceMatch[1]) : 0,
+      category: catMatch ? catMatch[1].trim() : 'other',
+      image: imageMatch ? imageMatch[1].trim() : '',
+      description: descMatch ? descMatch[1].trim() : 'No description available.'
+    };
+    
+    renderProduct(product);
+    loadRelatedProducts(product.category, id);
+  } catch(e) { showNotFound(); }
 }
-
-function escapeHtml(str) { return str.replace(/[&<>]/g, function(m){if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
 
 function renderProduct(p) {
   const icon = CAT_ICONS[p.category] || CAT_ICONS.default;
@@ -284,7 +187,7 @@ function renderProduct(p) {
     <div class="product-layout">
       <div class="product-image-area">
         <div class="product-main-img">
-          ${p.image ? `<img src="${p.image}" alt="${escapeHtml(p.title)}">` : `<span class="placeholder-icon">${icon}</span>`}
+          ${p.image ? `<img src="${p.image}" alt="${p.title}">` : `<span class="placeholder-icon">${icon}</span>`}
           <span class="product-cat-pill" style="background:${color}">${(p.category || '').toUpperCase()}</span>
         </div>
       </div>
@@ -293,49 +196,63 @@ function renderProduct(p) {
         <h1 class="product-title">${escapeHtml(p.title)}</h1>
         <div class="product-price-big">ZMW ${Number(p.price).toLocaleString()}</div>
         <div class="price-note"><i class="fa-solid fa-check-circle" style="color:#25d366;margin-right:5px"></i> In Stock · Price in Zambian Kwacha</div>
-        <div class="quick-features">
-          <div class="qf-item"><i class="fa-solid fa-shield-halved"></i> Genuine Product</div>
-          <div class="qf-item"><i class="fa-solid fa-truck-fast"></i> Fast Delivery</div>
-          <div class="qf-item"><i class="fa-solid fa-rotate-left"></i> 7-Day Returns</div>
-        </div>
-        <div class="desc-block">
-          <h3>Product Description</h3>
-          <p>${escapeHtml(p.description || 'No description available.')}</p>
-        </div>
-        <div class="cta-group">
-          <a href="https://wa.me/260979603741?text=${waMsg}" target="_blank" class="btn-wa-order">
-            <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
-          </a>
-          <a href="shop.html" class="btn-back">
-            <i class="fa-solid fa-arrow-left"></i> Back to Shop
-          </a>
-        </div>
-        <div class="trust-badges">
-          <div class="trust-badge"><i class="fa-solid fa-lock" style="color:var(--c5)"></i><span>Secure Ordering</span></div>
-          <div class="trust-badge"><i class="fa-solid fa-star" style="color:var(--c2)"></i><span>4.9 Star Rating</span></div>
-          <div class="trust-badge"><i class="fa-solid fa-headset" style="color:var(--c1)"></i><span>24/7 Support</span></div>
-        </div>
+        <div class="quick-features"><div class="qf-item"><i class="fa-solid fa-shield-halved"></i> Genuine Product</div><div class="qf-item"><i class="fa-solid fa-truck-fast"></i> Fast Delivery</div><div class="qf-item"><i class="fa-solid fa-rotate-left"></i> 7-Day Returns</div></div>
+        <div class="desc-block"><h3>Product Description</h3><p>${escapeHtml(p.description)}</p></div>
+        <div class="cta-group"><a href="https://wa.me/260979603741?text=${waMsg}" target="_blank" class="btn-wa-order"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a><a href="shop.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to Shop</a></div>
+        <div class="trust-badges"><div class="trust-badge"><i class="fa-solid fa-lock" style="color:var(--c5)"></i><span>Secure Ordering</span></div><div class="trust-badge"><i class="fa-solid fa-star" style="color:var(--c2)"></i><span>4.9 Star Rating</span></div><div class="trust-badge"><i class="fa-solid fa-headset" style="color:var(--c1)"></i><span>24/7 Support</span></div></div>
       </div>
     </div>`;
 }
 
+async function loadRelatedProducts(category, currentId) {
+  try {
+    const idxRes = await fetch('/content/products/index.json');
+    if (!idxRes.ok) return;
+    const files = await idxRes.json();
+    const products = await Promise.all(files.map(async f => {
+      const res = await fetch(`/content/products/${f}`);
+      const text = await res.text();
+      const titleMatch = text.match(/title:\s*(.+)/);
+      const priceMatch = text.match(/price:\s*(\d+)/);
+      const catMatch = text.match(/category:\s*(.+)/);
+      const imageMatch = text.match(/image:\s*(.+)/);
+      return {
+        slug: f.replace('.md', ''),
+        title: titleMatch ? titleMatch[1].trim() : 'Product',
+        price: priceMatch ? parseInt(priceMatch[1]) : 0,
+        category: catMatch ? catMatch[1].trim() : 'other',
+        image: imageMatch ? imageMatch[1].trim() : ''
+      };
+    }));
+    const related = products.filter(p => p.category === category && p.slug !== currentId).slice(0, 4);
+    if (related.length) {
+      const section = document.getElementById('relatedSection');
+      if (!section) {
+        const newSection = document.createElement('section');
+        newSection.className = 'related-section';
+        newSection.id = 'relatedSection';
+        newSection.innerHTML = '<div class="section-tag">More Like This</div><div class="section-title">Related Products</div><div class="related-grid" id="relatedGrid"></div>';
+        document.querySelector('footer').insertAdjacentElement('beforebegin', newSection);
+      }
+      const grid = document.getElementById('relatedGrid');
+      if (grid) {
+        grid.innerHTML = related.map(p => {
+          const icon = CAT_ICONS[p.category] || CAT_ICONS.default;
+          return `<a href="product.html?id=${p.slug}" class="product-card-sm"><div class="pc-img-sm">${p.image ? `<img src="${p.image}" alt="${p.title}">` : `<span style="font-size:40px;">${icon}</span>`}</div><div class="pc-info-sm"><div class="pc-name-sm">${escapeHtml(p.title)}</div><div class="pc-price-sm">ZMW ${Number(p.price).toLocaleString()}</div></div></a>`;
+        }).join('');
+      }
+    }
+  } catch(e) {}
+}
+
 function showNotFound() {
-  document.getElementById('productContent').innerHTML = `
-    <div class="not-found">
-      <div class="nf-icon">🔍</div>
-      <h2>Product Not Found</h2>
-      <p>We couldn't find that product. It may have been removed or the link might be incorrect.</p>
-      <a href="shop.html" class="btn-back" style="display:inline-flex;gap:8px;align-items:center;padding:14px 28px;border-radius:12px;background:var(--light);color:var(--text);text-decoration:none;font-weight:600"><i class="fa-solid fa-arrow-left"></i> Browse All Products</a>
-    </div>`;
+  document.getElementById('productContent').innerHTML = `<div class="not-found"><div class="nf-icon">🔍</div><h2>Product Not Found</h2><p>We couldn't find that product. It may have been removed or the link might be incorrect.</p><a href="shop.html" class="btn-back" style="display:inline-flex;gap:8px;align-items:center;padding:14px 28px;border-radius:12px;background:var(--light);color:var(--text);text-decoration:none;font-weight:600"><i class="fa-solid fa-arrow-left"></i> Browse All Products</a></div>`;
 }
 
-init();
+function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m){ if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m; }); }
 
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on('init', user => {
-    if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
-  });
-}
+loadProduct();
+if (window.netlifyIdentity) { window.netlifyIdentity.on('init', user => { if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); }); }
 </script>
 </body>
 </html>
