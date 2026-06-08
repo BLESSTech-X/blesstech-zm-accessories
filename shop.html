@@ -81,4 +81,28 @@
 
   <div class="mobile-tab-bar">
     <a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a>
-    <a href="shop.html" class="tab-bar-item active
+    <a href="shop.html" class="tab-bar-item active"><i class="fas fa-store"></i><span>Shop</span></a>
+    <a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a>
+    <a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('mobileToggle'); const mobileMenu = document.getElementById('mobileMenu'); const closeBtn = document.getElementById('closeMenuBtn'); const overlay = document.getElementById('menuOverlay');
+    if (hamburger) hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; });
+    function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu); if (overlay) overlay.addEventListener('click', closeMenu);
+
+    const products = [
+      { id: "iphone-11", title: "iPhone 11", price: 2500, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case" },
+      { id: "fast-charger", title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger" },
+      { id: "power-bank", title: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "powerbank" },
+      { id: "earphones", title: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "earphone" }
+    ];
+
+    let currentFilter = 'all';
+    function renderProducts() { const filtered = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter); const grid = document.getElementById('productsGrid'); grid.innerHTML = filtered.map(p => `<div class="product-card" onclick="location.href='product.html?id=${p.id}'"><img src="${p.image}" alt="${p.title}"><h3>${p.title}</h3><div class="price">ZMW ${p.price}</div></div>`).join(''); }
+    document.querySelectorAll('.cat-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); currentFilter = btn.dataset.cat; renderProducts(); }); });
+    renderProducts();
+  </script>
+</body>
+</html>
