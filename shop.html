@@ -41,6 +41,7 @@
     .product-card img { width: 100%; height: 200px; object-fit: cover; }
     .product-card h3 { padding: 16px 16px 8px; font-size: 1rem; }
     .product-card .price { padding: 0 16px; font-size: 1.2rem; font-weight: bold; background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .loading { text-align: center; padding: 60px; color: #a0aec0; font-size: 1.1rem; }
     .site-footer { background: #1a1a2e; color: #a0aec0; padding: 40px 0 20px; margin-top: 40px; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
     .footer-links-col h4 { color: white; margin-bottom: 16px; }
@@ -57,41 +58,124 @@
 </head>
 <body>
 
-  <header class="site-header"><div class="container header-inner"><a href="index.html" class="logo"><i class="fas fa-mobile-alt"></i><span class="logo-text">BLESS<span>Tech-ZM</span></span></a><nav class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Quote</a></nav><div class="header-actions"><a href="https://wa.me/260979603741" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a><button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button></div></div></header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><i class="fas fa-mobile-alt"></i><span class="logo-text">BLESS<span>Tech-ZM</span></span></a>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Quote</a></nav>
+      <div class="header-actions"><a href="https://wa.me/260979603741" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a><button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button></div>
+    </div>
+  </header>
+
   <div class="mobile-menu" id="mobileMenu"><button class="close-menu" id="closeMenuBtn">&times;</button><nav class="mobile-nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://wa.me/260979603741">WhatsApp</a></nav></div>
   <div class="menu-overlay" id="menuOverlay"></div>
 
   <div class="shop-header"><h1>All <span class="rainbow-text">Products</span></h1><p>Browse our collection of phone accessories</p></div>
 
-  <div class="categories-bar"><div class="categories-scroll" id="categoryBtns"><button class="cat-btn active" data-cat="all">All</button><button class="cat-btn" data-cat="case">Cases</button><button class="cat-btn" data-cat="charger">Chargers</button><button class="cat-btn" data-cat="cable">Cables</button><button class="cat-btn" data-cat="earphone">Earphones</button><button class="cat-btn" data-cat="powerbank">Power Banks</button><button class="cat-btn" data-cat="protector">Protectors</button></div></div>
+  <div class="categories-bar"><div class="categories-scroll" id="categoryBtns"><button class="cat-btn active" data-cat="all"><i class="fas fa-th"></i> All</button><button class="cat-btn" data-cat="case"><i class="fas fa-mobile-alt"></i> Cases</button><button class="cat-btn" data-cat="charger"><i class="fas fa-bolt"></i> Chargers</button><button class="cat-btn" data-cat="cable"><i class="fas fa-plug"></i> Cables</button><button class="cat-btn" data-cat="earphone"><i class="fas fa-headphones"></i> Earphones</button><button class="cat-btn" data-cat="powerbank"><i class="fas fa-battery-full"></i> Power Banks</button><button class="cat-btn" data-cat="protector"><i class="fas fa-shield-alt"></i> Protectors</button></div></div>
 
-  <div class="container"><div class="products-grid" id="productsGrid"></div></div>
+  <div class="container"><div class="products-grid" id="productsGrid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading products...</div></div></div>
 
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p id="copyright">&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
 
   <div class="mobile-tab-bar"><a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a><a href="shop.html" class="tab-bar-item active"><i class="fas fa-store"></i><span>Shop</span></a><a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a><a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
 
   <script>
+    // Mobile Menu
     const hamburger = document.getElementById('mobileToggle'); const mobileMenu = document.getElementById('mobileMenu'); const closeBtn = document.getElementById('closeMenuBtn'); const overlay = document.getElementById('menuOverlay');
     if (hamburger) hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; });
     function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
     if (closeBtn) closeBtn.addEventListener('click', closeMenu); if (overlay) overlay.addEventListener('click', closeMenu);
 
-    const products = [
-      { name: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger", desc: "20W USB-C fast charger", id: 1 },
-      { name: "Premium Phone Case", price: 100, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case", desc: "Shockproof, stylish design", id: 2 },
-      { name: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "powerbank", desc: "Dual USB, fast charging", id: 3 },
-      { name: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "earphone", desc: "Bluetooth, deep bass", id: 4 },
-      { name: "USB-C Cable", price: 60, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "cable", desc: "Braided, 2m", id: 5 },
-      { name: "Silicone Case", price: 70, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case", desc: "Soft grip, slim fit", id: 6 },
-      { name: "Car Charger", price: 90, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger", desc: "Dual port, fast charge", id: 7 },
-      { name: "Screen Protector", price: 50, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "protector", desc: "Tempered glass", id: 8 }
-    ];
-
+    let allProducts = [];
     let currentFilter = 'all';
-    function renderProducts() { const filtered = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter); document.getElementById('productsGrid').innerHTML = filtered.map(p => `<div class="product-card" onclick="location.href='product.html?id=${p.id}'"><img src="${p.image}"><h3>${p.name}</h3><div class="price">ZMW ${p.price}</div></div>`).join(''); }
-    document.querySelectorAll('.cat-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); currentFilter = btn.dataset.cat; renderProducts(); }); });
-    renderProducts();
+
+    // Load footer from CMS
+    async function loadFooter() {
+      try {
+        const footerRes = await fetch('/content/settings/footer.json');
+        if (footerRes.ok) {
+          const footer = await footerRes.json();
+          document.getElementById('copyright').innerHTML = footer.copyright;
+        }
+      } catch(e) { console.log('Footer loading...'); }
+    }
+
+    // Load category buttons from CMS
+    async function loadCategories() {
+      try {
+        const catRes = await fetch('/content/settings/categories.json');
+        if (catRes.ok) {
+          const cats = await catRes.json();
+          document.getElementById('categoryBtns').innerHTML = `<button class="cat-btn active" data-cat="all"><i class="fas fa-th"></i> All</button>` + cats.categories.map(c => `<button class="cat-btn" data-cat="${c.filter}"><i class="${c.icon}"></i> ${c.title}</button>`).join('');
+          attachCategoryEvents();
+        }
+      } catch(e) { console.log('Using default categories'); attachCategoryEvents(); }
+    }
+
+    function attachCategoryEvents() {
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.cat;
+          renderProducts();
+        });
+      });
+    }
+
+    // Load products from CMS
+    async function loadProducts() {
+      const grid = document.getElementById('productsGrid');
+      try {
+        const idxRes = await fetch('/content/products/index.json');
+        if (idxRes.ok) {
+          const files = await idxRes.json();
+          allProducts = await Promise.all(files.map(async (f) => {
+            const res = await fetch(`/content/products/${f}`);
+            const data = await res.json();
+            return {
+              id: f.replace('.md', ''),
+              title: data.title,
+              price: data.price,
+              image: data.image,
+              category: data.category,
+              featured: data.featured || false
+            };
+          }));
+        } else {
+          throw new Error('No products yet');
+        }
+      } catch(e) {
+        console.log('No products in CMS, using fallback');
+        allProducts = [
+          { id: 1, title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger" },
+          { id: 2, title: "Premium Phone Case", price: 100, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case" },
+          { id: 3, title: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "powerbank" },
+          { id: 4, title: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "earphone" }
+        ];
+      }
+      renderProducts();
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const filtered = currentFilter === 'all' ? allProducts : allProducts.filter(p => p.category === currentFilter);
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div style="text-align:center; padding:60px;">No products in this category yet.</div>';
+        return;
+      }
+      grid.innerHTML = filtered.map(p => `
+        <div class="product-card" onclick="location.href='product.html?id=${p.id}'">
+          <img src="${p.image}" alt="${p.title}">
+          <h3>${p.title}</h3>
+          <div class="price">ZMW ${p.price}</div>
+        </div>
+      `).join('');
+    }
+
+    loadFooter();
+    loadCategories();
+    loadProducts();
   </script>
 </body>
 </html>
