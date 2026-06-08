@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BLESSTech-ZM Accessories</title>
+  <title>BLESSTech-ZM Accessories | Phone Accessories Lusaka</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Your existing CSS here - same as before */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #ffffff; color: #1a1a2e; padding-bottom: 70px; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .rainbow-text { background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, #5f27cd); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+    /* Header */
     .site-header { background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
     .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
@@ -30,6 +31,8 @@
     .mobile-nav a { text-decoration: none; color: #1a1a2e; font-size: 18px; padding: 10px; }
     .menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; display: none; }
     .menu-overlay.active { display: block; }
+
+    /* Hero */
     .hero { position: relative; min-height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=1600'); background-size: cover; background-position: center; color: white; padding: 80px 20px; }
     .hero .container { position: relative; z-index: 1; }
     .hero h1 { font-size: 3rem; margin-bottom: 16px; }
@@ -37,13 +40,19 @@
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 40px; text-decoration: none; font-weight: 600; transition: all 0.2s; border: none; cursor: pointer; }
     .btn-primary { background: linear-gradient(135deg, #ff6b6b, #feca57); color: white; }
     .btn-outline { background: transparent; border: 2px solid white; color: white; }
+
+    /* Stats */
     .stats-bar { background: #f8f9fa; padding: 30px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
     .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; text-align: center; }
     .stat-item h3 { font-size: 2rem; background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .categories-bar { background: #ffffff; padding: 15px 0; border-bottom: 1px solid #e2e8f0; overflow-x: auto; }
-    .categories-scroll { display: inline-flex; gap: 10px; padding: 0 20px; }
+
+    /* Categories */
+    .categories-bar { background: #ffffff; padding: 15px 0; border-bottom: 1px solid #e2e8f0; overflow-x: auto; text-align: center; }
+    .categories-scroll { display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
     .cat-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #f1f5f9; border: none; border-radius: 40px; font-size: 0.75rem; font-weight: 500; color: #4a5568; cursor: pointer; transition: all 0.2s; }
     .cat-btn.active, .cat-btn:hover { background: linear-gradient(135deg, #ff6b6b, #feca57); color: white; }
+
+    /* Products Slider */
     .products-section { padding: 40px 0; }
     .section-header { text-align: center; margin-bottom: 32px; }
     .section-title { font-size: 1.8rem; font-weight: 700; }
@@ -58,21 +67,30 @@
     .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; background: white; border: 1px solid #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; }
     .slider-btn-left { left: 10px; }
     .slider-btn-right { right: 10px; }
+
+    /* Features */
     .features-section { background: #f8f9fa; padding: 50px 0; }
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
     .feature i { font-size: 2rem; background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 12px; }
-    .site-footer { background: #1a1a2e; color: #a0aec0; padding: 40px 0 20px; }
+
+    /* Footer */
+    .site-footer { background: #1a1a2e; color: #a0aec0; padding: 40px 0 20px; margin-top: 40px; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
     .footer-links-col h4 { color: white; margin-bottom: 16px; }
     .footer-links-col ul { list-style: none; }
     .footer-links-col li { margin-bottom: 8px; }
     .footer-links-col a { color: #a0aec0; text-decoration: none; }
     .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .mobile-tab-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #e2e8f0; padding: 8px 0 12px; z-index: 9999; }
-    .tab-bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #a0aec0; font-size: 0.7rem; }
-    .tab-bar-item i { font-size: 1.2rem; }
+
+    /* Bottom Navigation Bar - Same on ALL pages */
+    .mobile-tab-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 2px solid #feca57; padding: 10px 0 14px; z-index: 9999; display: flex; }
+    .tab-bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #a0aec0; font-size: 0.7rem; transition: all 0.2s; }
+    .tab-bar-item i { font-size: 1.3rem; }
     .tab-bar-item.active { background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    @media (max-width: 768px) { .mobile-tab-bar { display: flex; } .nav-links { display: none; } .mobile-toggle { display: block; } .hero h1 { font-size: 2rem; } .product-card { flex: 0 0 220px; } }
+    .tab-bar-item span { font-size: 0.65rem; }
+
+    @media (max-width: 768px) { .nav-links { display: none; } .mobile-toggle { display: block; } .hero h1 { font-size: 2rem; } .product-card { flex: 0 0 220px; } .mobile-tab-bar { display: flex; } }
+    @media (min-width: 769px) { .mobile-tab-bar { display: none; } }
   </style>
 </head>
 <body>
@@ -88,19 +106,25 @@
   <div class="mobile-menu" id="mobileMenu"><button class="close-menu" id="closeMenuBtn">&times;</button><nav class="mobile-nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://wa.me/260979603741">WhatsApp</a></nav></div>
   <div class="menu-overlay" id="menuOverlay"></div>
 
-  <section class="hero" id="hero"><div class="container"><h1 id="heroTitle">Phone Accessories <span class="rainbow-text">Delivered to Your Door</span></h1><p id="heroSub" class="hero-sub">Quality cases, chargers, cables, earphones & power banks in Lusaka</p><div class="hero-btns"><a href="shop.html" class="btn btn-primary" id="heroBtn">Shop Now</a><a href="https://wa.me/260979603741" class="btn btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a></div></div></section>
+  <section class="hero"><div class="container"><h1>Phone Accessories <span class="rainbow-text">Delivered to Your Door</span></h1><p class="hero-sub">Quality cases, chargers, cables, earphones & power banks in Lusaka</p><div class="hero-btns"><a href="shop.html" class="btn btn-primary">Shop Now</a><a href="https://wa.me/260979603741" class="btn btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a></div></div></section>
 
-  <div class="stats-bar"><div class="container stats-grid" id="statsGrid"></div></div>
+  <div class="stats-bar"><div class="container stats-grid"><div class="stat-item"><h3>500+</h3><p>Happy Customers</p></div><div class="stat-item"><h3>1000+</h3><p>Accessories Sold</p></div><div class="stat-item"><h3>Same-Day</h3><p>Delivery Lusaka</p></div><div class="stat-item"><h3>4.9 ★</h3><p>Rating</p></div></div></div>
 
-  <div class="categories-bar"><div class="categories-scroll" id="categoryBtns"></div></div>
+  <div class="categories-bar"><div class="categories-scroll" id="categoryBtns"><button class="cat-btn active" data-cat="all">All</button><button class="cat-btn" data-cat="case">Cases</button><button class="cat-btn" data-cat="charger">Chargers</button><button class="cat-btn" data-cat="cable">Cables</button><button class="cat-btn" data-cat="earphone">Earphones</button><button class="cat-btn" data-cat="powerbank">Power Banks</button></div></div>
 
-  <section class="products-section"><div class="container"><div class="section-header"><h2 class="section-title" id="sliderTitle">✨ Trending Now</h2></div><div class="slider-container"><button class="slider-btn slider-btn-left" id="scrollLeft">‹</button><div class="slider-track" id="productSlider"></div><button class="slider-btn slider-btn-right" id="scrollRight">›</button></div></div></section>
+  <section class="products-section"><div class="container"><div class="section-header"><h2 class="section-title">✨ Trending Now</h2></div><div class="slider-container"><button class="slider-btn slider-btn-left" id="scrollLeft">‹</button><div class="slider-track" id="productSlider"><div class="loading">Loading...</div></div><button class="slider-btn slider-btn-right" id="scrollRight">›</button></div></div></section>
 
-  <section class="features-section"><div class="container features-grid" id="featuresGrid"></div></section>
+  <section class="features-section"><div class="container features-grid"><div class="feature"><i class="fas fa-truck"></i><h3>Fast Delivery</h3><p>Same-day in Lusaka</p></div><div class="feature"><i class="fas fa-shield-alt"></i><h3>Quality Guaranteed</h3><p>Genuine products</p></div><div class="feature"><i class="fab fa-whatsapp"></i><h3>Easy Ordering</h3><p>Order on WhatsApp</p></div><div class="feature"><i class="fas fa-hand-holding-usd"></i><h3>Best Prices</h3><p>Affordable rates</p></div></div></section>
 
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p id="copyright">&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
 
-  <div class="mobile-tab-bar"><a href="index.html" class="tab-bar-item active"><i class="fas fa-home"></i><span>Home</span></a><a href="shop.html" class="tab-bar-item"><i class="fas fa-store"></i><span>Shop</span></a><a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a><a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
+  <!-- BOTTOM NAVIGATION BAR - ON ALL PAGES -->
+  <div class="mobile-tab-bar">
+    <a href="index.html" class="tab-bar-item active"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="shop.html" class="tab-bar-item"><i class="fas fa-store"></i><span>Shop</span></a>
+    <a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a>
+    <a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a>
+  </div>
 
   <script>
     // Mobile Menu
@@ -114,132 +138,27 @@
     let autoScrollInterval;
     let isHovering = false;
 
-    // Load all content from CMS
-    async function loadCMSContent() {
-      try {
-        // Load hero settings
-        const heroRes = await fetch('/content/settings/homepage.json');
-        if (heroRes.ok) {
-          const hero = await heroRes.json();
-          document.getElementById('heroTitle').innerHTML = hero.hero_title || 'Phone Accessories <span class="rainbow-text">Delivered to Your Door</span>';
-          document.getElementById('heroSub').innerHTML = hero.hero_subtitle || 'Quality cases, chargers, cables, earphones & power banks in Lusaka';
-          document.getElementById('heroBtn').innerHTML = hero.btn_text || 'Shop Now';
-        }
-
-        // Load stats
-        const statsRes = await fetch('/content/settings/stats.json');
-        if (statsRes.ok) {
-          const stats = await statsRes.json();
-          document.getElementById('statsGrid').innerHTML = stats.stats.map(s => `<div class="stat-item"><h3>${s.number}</h3><p>${s.label}</p></div>`).join('');
-        } else {
-          document.getElementById('statsGrid').innerHTML = `<div class="stat-item"><h3>500+</h3><p>Happy Customers</p></div><div class="stat-item"><h3>1000+</h3><p>Accessories Sold</p></div><div class="stat-item"><h3>Same-Day</h3><p>Delivery Lusaka</p></div><div class="stat-item"><h3>4.9 ★</h3><p>Rating</p></div>`;
-        }
-
-        // Load categories
-        const catRes = await fetch('/content/settings/categories.json');
-        if (catRes.ok) {
-          const cats = await catRes.json();
-          document.getElementById('categoryBtns').innerHTML = `<button class="cat-btn active" data-cat="all"><i class="fas fa-th"></i> All</button>` + cats.categories.map(c => `<button class="cat-btn" data-cat="${c.filter}"><i class="${c.icon}"></i> ${c.title}</button>`).join('');
-          
-          // Re-attach event listeners to category buttons
-          document.querySelectorAll('.cat-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-              document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-              btn.classList.add('active');
-              currentFilter = btn.dataset.cat;
-              renderProducts();
-            });
-          });
-        }
-
-        // Load features
-        const featRes = await fetch('/content/settings/features.json');
-        if (featRes.ok) {
-          const feats = await featRes.json();
-          document.getElementById('featuresGrid').innerHTML = feats.features.map(f => `<div class="feature"><i class="${f.icon}"></i><h3>${f.title}</h3><p>${f.description}</p></div>`).join('');
-        }
-
-        // Load slider title
-        const sliderRes = await fetch('/content/settings/slider.json');
-        if (sliderRes.ok) {
-          const slider = await sliderRes.json();
-          document.getElementById('sliderTitle').innerHTML = slider.title || '✨ Trending Now';
-        }
-
-        // Load footer
-        const footerRes = await fetch('/content/settings/footer.json');
-        if (footerRes.ok) {
-          const footer = await footerRes.json();
-          document.getElementById('copyright').innerHTML = footer.copyright;
-        }
-
-        // Load products
-        const productsIdxRes = await fetch('/content/products/index.json');
-        if (productsIdxRes.ok) {
-          const productFiles = await productsIdxRes.json();
-          allProducts = await Promise.all(productFiles.map(async f => {
-            const res = await fetch(`/content/products/${f}`);
-            const data = await res.json();
-            return {
-              id: f.replace('.md', ''),
-              title: data.title,
-              price: data.price,
-              image: data.image,
-              category: data.category,
-              featured: data.featured
-            };
-          }));
-        } else {
-          // Fallback products if CMS not ready
-          allProducts = [
-            { id: 1, title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger", featured: true },
-            { id: 2, title: "Premium Phone Case", price: 100, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case", featured: true }
-          ];
-        }
-        
-        renderProducts();
-        startAutoScroll();
-        
-      } catch(e) {
-        console.log('Loading fallback content...');
-        // Fallback stats
-        document.getElementById('statsGrid').innerHTML = `<div class="stat-item"><h3>500+</h3><p>Happy Customers</p></div><div class="stat-item"><h3>1000+</h3><p>Accessories Sold</p></div><div class="stat-item"><h3>Same-Day</h3><p>Delivery Lusaka</p></div><div class="stat-item"><h3>4.9 ★</h3><p>Rating</p></div>`;
-        document.getElementById('categoryBtns').innerHTML = `<button class="cat-btn active" data-cat="all"><i class="fas fa-th"></i> All</button><button class="cat-btn" data-cat="case"><i class="fas fa-mobile-alt"></i> Cases</button><button class="cat-btn" data-cat="charger"><i class="fas fa-bolt"></i> Chargers</button><button class="cat-btn" data-cat="cable"><i class="fas fa-plug"></i> Cables</button><button class="cat-btn" data-cat="earphone"><i class="fas fa-headphones"></i> Earphones</button><button class="cat-btn" data-cat="powerbank"><i class="fas fa-battery-full"></i> Power Banks</button>`;
-        allProducts = [
-          { id: 1, title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger", featured: true },
-          { id: 2, title: "Premium Phone Case", price: 100, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case", featured: true },
-          { id: 3, title: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "powerbank", featured: true },
-          { id: 4, title: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "earphone", featured: true }
-        ];
-        renderProducts();
-        startAutoScroll();
-      }
-    }
+    // Product data
+    const products = [
+      { id: "iphone-11", title: "iPhone 11", price: 2500, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case" },
+      { id: "fast-charger", title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger" },
+      { id: "power-bank", title: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "powerbank" },
+      { id: "earphones", title: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "earphone" }
+    ];
 
     function renderProducts() {
-      const filtered = currentFilter === 'all' ? allProducts : allProducts.filter(p => p.category === currentFilter);
+      const filtered = currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
       const slider = document.getElementById('productSlider');
       slider.innerHTML = filtered.map(p => `<div class="product-card" onclick="location.href='product.html?id=${p.id}'"><img src="${p.image}" alt="${p.title}"><h3>${p.title}</h3><div class="price">ZMW ${p.price}</div></div>`).join('');
     }
 
-    function startAutoScroll() {
-      const slider = document.getElementById('productSlider');
-      if (!slider || slider.children.length === 0) return;
-      if (autoScrollInterval) clearInterval(autoScrollInterval);
-      autoScrollInterval = setInterval(() => {
-        if (isHovering) return;
-        let newScroll = slider.scrollLeft + 280;
-        if (newScroll >= slider.scrollWidth - slider.clientWidth) newScroll = 0;
-        slider.scrollTo({ left: newScroll, behavior: 'smooth' });
-      }, 3500);
-    }
+    function startAutoScroll() { const slider = document.getElementById('productSlider'); if (!slider || slider.children.length === 0) return; if (autoScrollInterval) clearInterval(autoScrollInterval); autoScrollInterval = setInterval(() => { if (isHovering) return; let newScroll = slider.scrollLeft + 280; if (newScroll >= slider.scrollWidth - slider.clientWidth) newScroll = 0; slider.scrollTo({ left: newScroll, behavior: 'smooth' }); }, 3500); }
 
-    document.getElementById('scrollLeft')?.addEventListener('click', () => { const slider = document.getElementById('productSlider'); slider.scrollBy({ left: -280, behavior: 'smooth' }); });
-    document.getElementById('scrollRight')?.addEventListener('click', () => { const slider = document.getElementById('productSlider'); slider.scrollBy({ left: 280, behavior: 'smooth' }); });
-    const sliderEl = document.getElementById('productSlider'); 
-    if (sliderEl) { sliderEl.addEventListener('mouseenter', () => { isHovering = true; }); sliderEl.addEventListener('mouseleave', () => { isHovering = false; }); }
-
-    loadCMSContent();
+    document.querySelectorAll('.cat-btn').forEach(btn => { btn.addEventListener('click', () => { document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); currentFilter = btn.dataset.cat; renderProducts(); startAutoScroll(); }); });
+    document.getElementById('scrollLeft')?.addEventListener('click', () => { document.getElementById('productSlider').scrollBy({ left: -280, behavior: 'smooth' }); });
+    document.getElementById('scrollRight')?.addEventListener('click', () => { document.getElementById('productSlider').scrollBy({ left: 280, behavior: 'smooth' }); });
+    const sliderEl = document.getElementById('productSlider'); if (sliderEl) { sliderEl.addEventListener('mouseenter', () => { isHovering = true; }); sliderEl.addEventListener('mouseleave', () => { isHovering = false; }); }
+    renderProducts(); startAutoScroll();
   </script>
 </body>
 </html>
