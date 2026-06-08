@@ -31,7 +31,7 @@
     .menu-overlay.active { display: block; }
     .shop-header { text-align: center; padding: 40px 20px; background: #f8f9fa; }
     .shop-header h1 { font-size: 2.5rem; margin-bottom: 8px; }
-    .categories-bar { background: #ffffff; padding: 15px 0; border-bottom: 1px solid #e2e8f0; overflow-x: auto; text-align: center; }
+    .categories-bar { background: #ffffff; padding: 15px 0; border-bottom: 1px solid #e2e8f0; text-align: center; }
     .categories-scroll { display: inline-flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
     .cat-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #f1f5f9; border: none; border-radius: 40px; font-size: 0.75rem; font-weight: 500; color: #4a5568; cursor: pointer; transition: all 0.2s; }
     .cat-btn.active, .cat-btn:hover { background: linear-gradient(135deg, #ff6b6b, #feca57); color: white; }
@@ -41,8 +41,7 @@
     .product-card img { width: 100%; height: 200px; object-fit: cover; }
     .product-card h3 { padding: 16px 16px 8px; font-size: 1rem; }
     .product-card .price { padding: 0 16px; font-size: 1.2rem; font-weight: bold; background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .loading { text-align: center; padding: 60px; color: #a0aec0; font-size: 1.1rem; }
-    .no-products { text-align: center; padding: 60px; color: #a0aec0; }
+    .loading { text-align: center; padding: 60px; color: #a0aec0; }
     .site-footer { background: #1a1a2e; color: #a0aec0; padding: 40px 0 20px; margin-top: 40px; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
     .footer-links-col h4 { color: white; margin-bottom: 16px; }
@@ -50,11 +49,13 @@
     .footer-links-col li { margin-bottom: 8px; }
     .footer-links-col a { color: #a0aec0; text-decoration: none; }
     .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .mobile-tab-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #e2e8f0; padding: 8px 0 12px; z-index: 9999; }
+    .mobile-tab-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 2px solid #feca57; padding: 10px 0 14px; z-index: 9999; display: flex; }
     .tab-bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #a0aec0; font-size: 0.7rem; }
-    .tab-bar-item i { font-size: 1.2rem; }
+    .tab-bar-item i { font-size: 1.3rem; }
     .tab-bar-item.active { background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    @media (max-width: 768px) { .mobile-tab-bar { display: flex; } .nav-links { display: none; } .mobile-toggle { display: block; } }
+    .tab-bar-item span { font-size: 0.65rem; }
+    @media (max-width: 768px) { .nav-links { display: none; } .mobile-toggle { display: block; } .mobile-tab-bar { display: flex; } }
+    @media (min-width: 769px) { .mobile-tab-bar { display: none; } }
   </style>
 </head>
 <body>
@@ -72,111 +73,12 @@
 
   <div class="shop-header"><h1>All <span class="rainbow-text">Products</span></h1><p>Browse our collection of phone accessories</p></div>
 
-  <div class="categories-bar"><div class="categories-scroll" id="categoryBtns">
-    <button class="cat-btn active" data-cat="all"><i class="fas fa-th"></i> All</button>
-    <button class="cat-btn" data-cat="case"><i class="fas fa-mobile-alt"></i> Cases</button>
-    <button class="cat-btn" data-cat="charger"><i class="fas fa-bolt"></i> Chargers</button>
-    <button class="cat-btn" data-cat="cable"><i class="fas fa-plug"></i> Cables</button>
-    <button class="cat-btn" data-cat="earphone"><i class="fas fa-headphones"></i> Earphones</button>
-    <button class="cat-btn" data-cat="powerbank"><i class="fas fa-battery-full"></i> Power Banks</button>
-    <button class="cat-btn" data-cat="protector"><i class="fas fa-shield-alt"></i> Protectors</button>
-  </div></div>
+  <div class="categories-bar"><div class="categories-scroll"><button class="cat-btn active" data-cat="all">All</button><button class="cat-btn" data-cat="case">Cases</button><button class="cat-btn" data-cat="charger">Chargers</button><button class="cat-btn" data-cat="cable">Cables</button><button class="cat-btn" data-cat="earphone">Earphones</button><button class="cat-btn" data-cat="powerbank">Power Banks</button></div></div>
 
-  <div class="container"><div class="products-grid" id="productsGrid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading products...</div></div></div>
+  <div class="container"><div class="products-grid" id="productsGrid"><div class="loading">Loading products...</div></div></div>
 
   <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
 
-  <div class="mobile-tab-bar"><a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a><a href="shop.html" class="tab-bar-item active"><i class="fas fa-store"></i><span>Shop</span></a><a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a><a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
-
-  <script>
-    // Mobile Menu
-    const hamburger = document.getElementById('mobileToggle'); const mobileMenu = document.getElementById('mobileMenu'); const closeBtn = document.getElementById('closeMenuBtn'); const overlay = document.getElementById('menuOverlay');
-    if (hamburger) hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; });
-    function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu); if (overlay) overlay.addEventListener('click', closeMenu);
-
-    let allProducts = [];
-    let currentFilter = 'all';
-
-    // Category filter
-    document.querySelectorAll('.cat-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.dataset.cat;
-        renderProducts();
-      });
-    });
-
-    // Fetch products from GitHub directly (since Netlify serves the raw files)
-    async function fetchProductFiles() {
-      const grid = document.getElementById('productsGrid');
-      try {
-        // First, try to get the list of product files from the CMS index
-        const idxRes = await fetch('/content/products/index.json');
-        if (idxRes.ok) {
-          const files = await idxRes.json();
-          allProducts = await Promise.all(files.map(async (file) => {
-            const res = await fetch(`/content/products/${file}`);
-            const text = await res.text();
-            return parseMarkdownProduct(text, file.replace('.md', ''));
-          }));
-        } else {
-          // Fallback: hardcoded products for testing
-          allProducts = [
-            { id: "iphone-11", title: "iPhone 11", price: 2500, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case" },
-            { id: "fast-charger", title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger" },
-            { id: "power-bank", title: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "powerbank" },
-            { id: "earphones", title: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "earphone" }
-          ];
-        }
-      } catch(e) {
-        console.log('Error loading products, using fallback');
-        allProducts = [
-          { id: "iphone-11", title: "iPhone 11", price: 2500, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case" },
-          { id: "fast-charger", title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger" }
-        ];
-      }
-      renderProducts();
-    }
-
-    function parseMarkdownProduct(markdown, id) {
-      const titleMatch = markdown.match(/title:\s*(.+)/);
-      const priceMatch = markdown.match(/price:\s*(\d+)/);
-      const descMatch = markdown.match(/description:\s*(.+)/);
-      const imageMatch = markdown.match(/image:\s*(.+)/);
-      const categoryMatch = markdown.match(/category:\s*(.+)/);
-      
-      return {
-        id: id,
-        title: titleMatch ? titleMatch[1].trim() : 'Product',
-        price: priceMatch ? parseInt(priceMatch[1]) : 0,
-        description: descMatch ? descMatch[1].trim() : '',
-        image: imageMatch ? imageMatch[1].trim() : 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300',
-        category: categoryMatch ? categoryMatch[1].trim() : 'other'
-      };
-    }
-
-    function renderProducts() {
-      const grid = document.getElementById('productsGrid');
-      const filtered = currentFilter === 'all' ? allProducts : allProducts.filter(p => p.category === currentFilter);
-      
-      if (filtered.length === 0) {
-        grid.innerHTML = '<div class="no-products">No products found in this category.</div>';
-        return;
-      }
-      
-      grid.innerHTML = filtered.map(p => `
-        <div class="product-card" onclick="location.href='product.html?id=${p.id}'">
-          <img src="${p.image}" alt="${p.title}">
-          <h3>${p.title}</h3>
-          <div class="price">ZMW ${p.price}</div>
-        </div>
-      `).join('');
-    }
-
-    // Start loading products
-    fetchProductFiles();
-  </script>
-</body>
-</html>
+  <div class="mobile-tab-bar">
+    <a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="shop.html" class="tab-bar-item active
