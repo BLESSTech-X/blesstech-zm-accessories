@@ -33,9 +33,9 @@
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
     .about-text h1 { font-size: 2.5rem; margin-bottom: 20px; }
     .about-text p { color: #4a5568; line-height: 1.6; margin-bottom: 20px; }
-    .about-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-    .values-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
-    .value-card { text-align: center; padding: 20px; background: #f8f9fa; border-radius: 16px; }
+    .about-image img { width: 100%; border-radius: 20px; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px; }
+    .value-card { text-align: center; padding: 24px; background: #f8f9fa; border-radius: 20px; }
     .value-card i { font-size: 2rem; background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 12px; }
     .site-footer { background: #1a1a2e; color: #a0aec0; padding: 40px 0 20px; margin-top: 40px; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
@@ -44,23 +44,38 @@
     .footer-links-col li { margin-bottom: 8px; }
     .footer-links-col a { color: #a0aec0; text-decoration: none; }
     .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .mobile-tab-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #e2e8f0; padding: 8px 0 12px; z-index: 9999; }
+    .mobile-tab-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 2px solid #feca57; padding: 10px 0 14px; z-index: 9999; display: flex; }
     .tab-bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #a0aec0; font-size: 0.7rem; }
-    .tab-bar-item i { font-size: 1.2rem; }
-    @media (max-width: 768px) { .mobile-tab-bar { display: flex; } .nav-links { display: none; } .mobile-toggle { display: block; } .about-grid { grid-template-columns: 1fr; } }
+    .tab-bar-item i { font-size: 1.3rem; }
+    .tab-bar-item.active { background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .tab-bar-item span { font-size: 0.65rem; }
+    @media (max-width: 768px) { .nav-links { display: none; } .mobile-toggle { display: block; } .about-grid { grid-template-columns: 1fr; } .mobile-tab-bar { display: flex; } }
+    @media (min-width: 769px) { .mobile-tab-bar { display: none; } }
   </style>
 </head>
 <body>
 
-  <header class="site-header"><div class="container header-inner"><a href="index.html" class="logo"><i class="fas fa-mobile-alt"></i><span class="logo-text">BLESS<span>Tech-ZM</span></span></a><nav class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Quote</a></nav><div class="header-actions"><a href="https://wa.me/260979603741" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a><button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button></div></div></header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><i class="fas fa-mobile-alt"></i><span class="logo-text">BLESS<span>Tech-ZM</span></span></a>
+      <nav class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Quote</a></nav>
+      <div class="header-actions"><a href="https://wa.me/260979603741" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a><button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button></div>
+    </div>
+  </header>
+
   <div class="mobile-menu" id="mobileMenu"><button class="close-menu" id="closeMenuBtn">&times;</button><nav class="mobile-nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://wa.me/260979603741">WhatsApp</a></nav></div>
   <div class="menu-overlay" id="menuOverlay"></div>
 
-  <section class="about-section"><div class="container"><div class="about-grid"><div class="about-text"><h1>About <span class="rainbow-text">BLESSTech-ZM</span></h1><p>We are a Lusaka-based online store specializing in quality phone accessories. Our mission is to provide affordable, genuine accessories with fast delivery across Lusaka.</p><p>Founded by Barack Blessings, BLESSTech-ZM Accessories was created to solve a simple problem: Zambians should have easy access to quality phone accessories without overpaying or waiting weeks for delivery.</p><p>Today, we serve hundreds of happy customers across Lusaka, delivering same-day and next-day orders directly to their doors.</p></div><div class="about-image"><img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=600" alt="About BLESSTech-ZM"></div></div><div class="values-list"><div class="value-card"><i class="fas fa-truck"></i><h3>Fast Delivery</h3><p>Same-day delivery in Lusaka</p></div><div class="value-card"><i class="fas fa-shield-alt"></i><h3>Quality Guaranteed</h3><p>Only genuine products</p></div><div class="value-card"><i class="fab fa-whatsapp"></i><h3>Easy Ordering</h3><p>Order via WhatsApp</p></div><div class="value-card"><i class="fas fa-hand-holding-usd"></i><h3>Best Prices</h3><p>Affordable rates</p></div></div></div></section>
+  <section class="about-section"><div class="container"><div class="about-grid"><div class="about-text"><h1>About <span class="rainbow-text">BLESSTech-ZM</span></h1><p>We are a Lusaka-based online store specializing in quality phone accessories. Our mission is to provide affordable, genuine accessories with fast delivery across Lusaka.</p><p>Founded by Barack Blessings, BLESSTech-ZM Accessories was created to solve a simple problem: Zambians should have easy access to quality phone accessories without overpaying or waiting weeks for delivery.</p></div><div class="about-image"><img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=600" alt="About"></div></div><div class="values-grid"><div class="value-card"><i class="fas fa-truck"></i><h3>Fast Delivery</h3><p>Same-day in Lusaka</p></div><div class="value-card"><i class="fas fa-shield-alt"></i><h3>Quality Guaranteed</h3><p>Genuine products</p></div><div class="value-card"><i class="fab fa-whatsapp"></i><h3>Easy Ordering</h3><p>Order on WhatsApp</p></div><div class="value-card"><i class="fas fa-hand-holding-usd"></i><h3>Best Prices</h3><p>Affordable rates</p></div></div></div></section>
 
   <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
 
-  <div class="mobile-tab-bar"><a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a><a href="shop.html" class="tab-bar-item"><i class="fas fa-store"></i><span>Shop</span></a><a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a><a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
+  <div class="mobile-tab-bar">
+    <a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="shop.html" class="tab-bar-item"><i class="fas fa-store"></i><span>Shop</span></a>
+    <a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a>
+    <a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a>
+  </div>
 
   <script>
     const hamburger = document.getElementById('mobileToggle'); const mobileMenu = document.getElementById('mobileMenu'); const closeBtn = document.getElementById('closeMenuBtn'); const overlay = document.getElementById('menuOverlay');
