@@ -33,45 +33,4 @@
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
     .contact-info h1 { font-size: 2.5rem; margin-bottom: 20px; }
     .contact-details { margin: 30px 0; }
-    .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-    .contact-item i { font-size: 1.5rem; background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; width: 40px; }
-    .contact-item a { color: #1a1a2e; text-decoration: none; }
-    .contact-form { background: #f8f9fa; padding: 30px; border-radius: 20px; }
-    .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 16px; border: 1px solid #e2e8f0; border-radius: 10px; font-family: inherit; }
-    .contact-form button { background: linear-gradient(135deg, #ff6b6b, #feca57); color: white; border: none; padding: 14px 28px; border-radius: 40px; cursor: pointer; font-weight: 600; width: 100%; }
-    .form-success { display: none; margin-top: 16px; padding: 10px; background: #d4edda; color: #155724; border-radius: 10px; text-align: center; }
-    .site-footer { background: #1a1a2e; color: #a0aec0; padding: 40px 0 20px; margin-top: 40px; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
-    .footer-links-col h4 { color: white; margin-bottom: 16px; }
-    .footer-links-col ul { list-style: none; }
-    .footer-links-col li { margin-bottom: 8px; }
-    .footer-links-col a { color: #a0aec0; text-decoration: none; }
-    .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .mobile-tab-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #e2e8f0; padding: 8px 0 12px; z-index: 9999; }
-    .tab-bar-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #a0aec0; font-size: 0.7rem; }
-    .tab-bar-item i { font-size: 1.2rem; }
-    @media (max-width: 768px) { .mobile-tab-bar { display: flex; } .nav-links { display: none; } .mobile-toggle { display: block; } .contact-grid { grid-template-columns: 1fr; } }
-  </style>
-</head>
-<body>
-
-  <header class="site-header"><div class="container header-inner"><a href="index.html" class="logo"><i class="fas fa-mobile-alt"></i><span class="logo-text">BLESS<span>Tech-ZM</span></span></a><nav class="nav-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Quote</a></nav><div class="header-actions"><a href="https://wa.me/260979603741" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Chat</a><button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button></div></div></header>
-  <div class="mobile-menu" id="mobileMenu"><button class="close-menu" id="closeMenuBtn">&times;</button><nav class="mobile-nav"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://wa.me/260979603741">WhatsApp</a></nav></div>
-  <div class="menu-overlay" id="menuOverlay"></div>
-
-  <section class="contact-section"><div class="container"><div class="contact-grid"><div class="contact-info"><h1>Get in <span class="rainbow-text">Touch</span></h1><p>We're here to help. Reach out to us anytime.</p><div class="contact-details"><div class="contact-item"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><br><a href="https://wa.me/260979603741">+260 979 603 741</a></div></div><div class="contact-item"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><br><a href="tel:+260979603741">+260 979 603 741</a></div></div><div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><br>Lusaka, Zambia</div></div><div class="contact-item"><i class="fas fa-clock"></i><div><strong>Hours</strong><br>Mon-Sat: 9am - 6pm</div></div></div></div><div class="contact-form"><h2>Send us a message</h2><form id="contactForm"><input type="text" id="name" placeholder="Your Name" required><input type="email" id="email" placeholder="Your Email" required><textarea id="message" rows="5" placeholder="Your Message" required></textarea><button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button><div id="formSuccess" class="form-success">Message sent! We'll reply within 24 hours.</div></form></div></div></div></section>
-
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
-
-  <div class="mobile-tab-bar"><a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a><a href="shop.html" class="tab-bar-item"><i class="fas fa-store"></i><span>Shop</span></a><a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a><a href="contact.html" class="tab-bar-item active"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
-
-  <script>
-    const hamburger = document.getElementById('mobileToggle'); const mobileMenu = document.getElementById('mobileMenu'); const closeBtn = document.getElementById('closeMenuBtn'); const overlay = document.getElementById('menuOverlay');
-    if (hamburger) hamburger.addEventListener('click', () => { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; });
-    function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu); if (overlay) overlay.addEventListener('click', closeMenu);
-
-    document.getElementById('contactForm').addEventListener('submit', function(e) { e.preventDefault(); const success = document.getElementById('formSuccess'); success.style.display = 'block'; this.reset(); setTimeout(() => success.style.display = 'none', 5000); });
-  </script>
-</body>
-</html>
+    .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom:
