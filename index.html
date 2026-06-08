@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>BLESSTech-ZM Accessories – Phone Accessories in Lusaka</title>
 <meta name="description" content="Premium phone accessories in Lusaka, Zambia. Cases, chargers, cables, earphones, power banks and more. Order via WhatsApp for fast delivery.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -897,11 +897,11 @@
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-badge"><i class="fa-solid fa-location-dot"></i> Lusaka, Zambia</div>
-      <h1 id="hero-title">Top Phone<br><span class="highlight">Accessories</span><br>in Lusaka</h1>
-      <p id="hero-subtitle">Premium cases, chargers, cables & more. Fast delivery across Zambia. Order in minutes on WhatsApp.</p>
+      <h1>Top Phone<br><span class="highlight">Accessories</span><br>in Lusaka</h1>
+      <p>Premium cases, chargers, cables & more. Fast delivery across Zambia. Order in minutes on WhatsApp.</p>
       <div class="hero-btns">
-        <a href="shop.html" class="btn-primary"><i class="fa-solid fa-bag-shopping"></i> <span id="btn-primary">Shop Now</span></a>
-        <a href="https://wa.me/260979603741?text=Hi!%20I'd%20like%20to%20order%20phone%20accessories." target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> <span id="btn-secondary">Order on WhatsApp</span></a>
+        <a href="shop.html" class="btn-primary"><i class="fa-solid fa-bag-shopping"></i> Shop Now</a>
+        <a href="https://wa.me/260979603741?text=Hi!%20I'd%20like%20to%20order%20phone%20accessories." target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -1007,7 +1007,7 @@
     <div class="slider-track-container" id="sliderContainer"
          onmouseenter="pauseSlider()" onmouseleave="resumeSlider()">
       <div class="slider-track" id="sliderTrack">
-        <!-- Cards injected by JS from _products/*.md frontmatter or demo data -->
+        <!-- Products injected by JavaScript -->
       </div>
     </div>
 
@@ -1109,8 +1109,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 BLESSTech-ZM Accessories. All rights reserved.</p>
-    <p>Built with ❤️ in Lusaka, Zambia</p>
+    <p>© 2026 BLESSTech-ZM Accessories. All rights reserved.</p>
+    <p>Built with ❤️ in Lusaka, Zambia | Jesus loves you. ❤️</p>
   </div>
 </footer>
 
@@ -1131,67 +1131,35 @@ function toggleMenu() {
   icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
 }
 
-// ── LOAD HERO FROM CMS JSON (fallback to defaults) ──
-async function loadHero() {
-  try {
-    const res = await fetch('_data/hero.json');
-    if (!res.ok) return;
-    const d = await res.json();
-    if (d.hero_title) document.getElementById('hero-title').innerHTML = d.hero_title.replace(/\n/g,'<br>');
-    if (d.hero_subtitle) document.getElementById('hero-subtitle').textContent = d.hero_subtitle;
-    if (d.btn_primary) document.getElementById('btn-primary').textContent = d.btn_primary;
-    if (d.btn_secondary) document.getElementById('btn-secondary').textContent = d.btn_secondary;
-  } catch(e) {}
-}
-loadHero();
-
 // ── SLIDER ──
-const CARD_W = 280; // card width + gap
-const SLIDE_INTERVAL = 3500;
 let currentIndex = 0;
 let autoTimer = null;
-let products = [];
+
+// Demo products data (will be replaced by CMS when configured)
+const products = [
+  { slug: 'transparent-case', title: 'Clear Slim Case', price: 85, category: 'case', featured: true, image: '', description: 'Ultra-thin transparent case.' },
+  { slug: 'fast-charger-20w', title: '20W Fast Charger', price: 150, category: 'charger', featured: true, image: '', description: 'USB-C fast charging adapter.' },
+  { slug: 'braided-usb-c', title: 'Braided USB-C Cable', price: 60, category: 'cable', featured: true, image: '', description: '1.5m nylon braided cable.' },
+  { slug: 'wireless-earbuds', title: 'TWS Wireless Earbuds', price: 380, category: 'earphone', featured: true, image: '', description: 'True wireless with 20hr battery.' },
+  { slug: '10000mah-powerbank', title: '10000mAh Power Bank', price: 420, category: 'powerbank', featured: true, image: '', description: 'Dual USB output power bank.' },
+  { slug: 'tempered-glass', title: 'Tempered Glass Protector', price: 45, category: 'protector', featured: true, image: '', description: '9H hardness screen protector.' }
+];
 
 const CAT_ICONS = {
   case: '📱', charger: '⚡', cable: '🔌', earphone: '🎧',
   powerbank: '🔋', protector: '🛡️', default: '🛍️'
 };
 
-const DEMO_PRODUCTS = [
-  { slug:'transparent-case', title:'Clear Slim Case', price:85, category:'case', featured:true, image:'', description:'Ultra-thin transparent case.' },
-  { slug:'fast-charger-20w', title:'20W Fast Charger', price:150, category:'charger', featured:true, image:'', description:'USB-C fast charging adapter.' },
-  { slug:'braided-usb-c', title:'Braided USB-C Cable', price:60, category:'cable', featured:true, image:'', description:'1.5m nylon braided cable.' },
-  { slug:'wireless-earbuds', title:'TWS Wireless Earbuds', price:380, category:'earphone', featured:true, image:'', description:'True wireless with 20hr battery.' },
-  { slug:'10000mah-powerbank', title:'10000mAh Power Bank', price:420, category:'powerbank', featured:true, image:'', description:'Dual USB output power bank.' },
-  { slug:'tempered-glass', title:'Tempered Glass Protector', price:45, category:'protector', featured:true, image:'', description:'9H hardness screen protector.' },
-];
-
-async function loadProducts() {
-  // Try fetching from CMS _products index (generated by Netlify)
-  try {
-    const res = await fetch('/_products/index.json');
-    if (res.ok) {
-      const list = await res.json();
-      products = list.filter(p => p.featured);
-    }
-  } catch(e) {}
-
-  // Fall back to demo data
-  if (!products.length) products = DEMO_PRODUCTS.filter(p => p.featured);
-  renderSlider();
-}
-
 function createCard(p) {
-  const slug = p.slug || (p.title || '').toLowerCase().replace(/\s+/g,'-');
   const icon = CAT_ICONS[p.category] || CAT_ICONS.default;
   return `
-    <a href="product.html?id=${slug}" class="product-card">
+    <a href="product.html?id=${p.slug}" class="product-card">
       <div class="product-img-wrap">
         ${p.image ? `<img src="${p.image}" alt="${p.title}" loading="lazy">` : `<span class="product-img-placeholder">${icon}</span>`}
         <span class="product-badge">Featured</span>
       </div>
       <div class="product-info">
-        <div class="product-cat">${(p.category||'').toUpperCase()}</div>
+        <div class="product-cat">${(p.category || '').toUpperCase()}</div>
         <div class="product-name">${p.title}</div>
         <div class="product-footer">
           <span class="product-price">ZMW ${Number(p.price).toLocaleString()}</span>
@@ -1204,56 +1172,91 @@ function createCard(p) {
 function renderSlider() {
   const track = document.getElementById('sliderTrack');
   const dots = document.getElementById('sliderDots');
-  if (!products.length) { track.innerHTML = '<p style="padding:20px;color:var(--muted)">No featured products yet. Add some in the CMS!</p>'; return; }
+  if (!products.length) { 
+    track.innerHTML = '<p style="padding:20px;color:var(--muted)">No featured products yet. Add some in the CMS!</p>'; 
+    return; 
+  }
 
   track.innerHTML = products.map(p => createCard(p)).join('');
 
-  const visCount = Math.floor((window.innerWidth - 40) / 300) || 1;
-  const dotCount = Math.max(1, products.length - visCount + 1);
-  dots.innerHTML = Array.from({length: dotCount}, (_,i) =>
-    `<button class="dot${i===0?' active':''}" onclick="goTo(${i})" aria-label="Slide ${i+1}"></button>`
+  const cardWidth = 280; // card width + gap
+  const visibleCards = Math.max(1, Math.floor((window.innerWidth - 40) / cardWidth));
+  const dotCount = Math.max(1, products.length - visibleCards + 1);
+  dots.innerHTML = Array.from({ length: dotCount }, (_, i) =>
+    `<button class="dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})" aria-label="Slide ${i + 1}"></button>`
   ).join('');
 
-  startSlider();
+  // Reset position
+  goToSlide(0);
 }
 
-function goTo(index) {
+function goToSlide(index) {
   const track = document.getElementById('sliderTrack');
-  const dots = document.querySelectorAll('.dot');
   const cards = track.querySelectorAll('.product-card');
+  const dots = document.querySelectorAll('.dot');
   if (!cards.length) return;
-  const maxIndex = Math.max(0, cards.length - 1);
+  
+  const cardWidth = cards[0]?.offsetWidth + 20 || 280;
+  const visibleCards = Math.max(1, Math.floor((window.innerWidth - 40) / cardWidth));
+  const maxIndex = Math.max(0, cards.length - visibleCards);
   currentIndex = Math.min(Math.max(0, index), maxIndex);
-  const cardWidth = cards[0].offsetWidth + 20; // + gap
+  
   track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-  dots.forEach((d,i) => d.classList.toggle('active', i === currentIndex));
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
 }
 
 function slideNext() {
-  const count = document.querySelectorAll('#sliderTrack .product-card').length;
-  goTo(currentIndex + 1 >= count ? 0 : currentIndex + 1);
+  const track = document.getElementById('sliderTrack');
+  const cards = track.querySelectorAll('.product-card');
+  const cardWidth = cards[0]?.offsetWidth + 20 || 280;
+  const visibleCards = Math.max(1, Math.floor((window.innerWidth - 40) / cardWidth));
+  const maxIndex = Math.max(0, cards.length - visibleCards);
+  const newIndex = currentIndex + 1 > maxIndex ? 0 : currentIndex + 1;
+  goToSlide(newIndex);
 }
 
 function slidePrev() {
-  const count = document.querySelectorAll('#sliderTrack .product-card').length;
-  goTo(currentIndex - 1 < 0 ? count - 1 : currentIndex - 1);
+  const track = document.getElementById('sliderTrack');
+  const cards = track.querySelectorAll('.product-card');
+  const cardWidth = cards[0]?.offsetWidth + 20 || 280;
+  const visibleCards = Math.max(1, Math.floor((window.innerWidth - 40) / cardWidth));
+  const maxIndex = Math.max(0, cards.length - visibleCards);
+  const newIndex = currentIndex - 1 < 0 ? maxIndex : currentIndex - 1;
+  goToSlide(newIndex);
 }
 
-function startSlider() {
-  clearInterval(autoTimer);
-  autoTimer = setInterval(slideNext, SLIDE_INTERVAL);
+function startAutoSlider() {
+  if (autoTimer) clearInterval(autoTimer);
+  autoTimer = setInterval(slideNext, 3500);
 }
 
-function pauseSlider() { clearInterval(autoTimer); }
-function resumeSlider() { startSlider(); }
+function pauseSlider() {
+  if (autoTimer) clearInterval(autoTimer);
+  autoTimer = null;
+}
 
-window.addEventListener('resize', () => { if(products.length) { goTo(0); renderSlider(); } });
-loadProducts();
+function resumeSlider() {
+  if (autoTimer) clearInterval(autoTimer);
+  autoTimer = setInterval(slideNext, 3500);
+}
+
+// Handle window resize
+window.addEventListener('resize', () => {
+  if (products.length) goToSlide(0);
+});
+
+// Initialize slider
+renderSlider();
+startAutoSlider();
 
 // ── NETLIFY IDENTITY ──
 if (window.netlifyIdentity) {
   window.netlifyIdentity.on('init', user => {
-    if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; });
+    if (!user) {
+      window.netlifyIdentity.on('login', () => {
+        document.location.href = '/admin/';
+      });
+    }
   });
 }
 </script>
