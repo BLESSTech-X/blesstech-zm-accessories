@@ -60,7 +60,12 @@ collections:
         file: "content/settings/footer.json"
         fields:
           - { label: "Copyright Text", name: "copyright", widget: "string", default: "&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️" }
-          - { label: "Footer Links", name: "links", widget: "list", fields: [{ label: "Link Text", name: "text", widget: "string" }, { label: "Link URL", name: "url", widget: "string" }] }
+          - label: "Footer Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Link Text", name: "text", widget: "string" }
+              - { label: "Link URL", name: "url", widget: "string" }
 
   - name: "pages"
     label: "Pages"
