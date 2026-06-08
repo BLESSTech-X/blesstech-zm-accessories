@@ -2,316 +2,102 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us – BLESSTech-ZM Accessories</title>
-<meta name="description" content="Learn about BLESSTech-ZM Accessories – Lusaka's trusted phone accessories store. Our story, mission, and why customers choose us.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>About | BLESSTech-ZM Accessories</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
-
-  :root{--c1:#ff6b6b;--c2:#feca57;--c3:#48dbfb;--c4:#ff9ff3;--c5:#54a0ff;--c6:#5f27cd;--white:#ffffff;--dark:#0f0f1a;--text:#1a1a2e;--muted:#6b7280;--light:#f8f9ff;--grad:linear-gradient(135deg,#ff6b6b,#feca57,#48dbfb,#ff9ff3,#54a0ff,#5f27cd);--grad2:linear-gradient(135deg,#ff6b6b 0%,#feca57 50%,#48dbfb 100%);--shadow:0 4px 24px rgba(0,0,0,0.08);--shadow-lg:0 8px 48px rgba(0,0,0,0.14);--radius:16px;--nav-h:64px;--bottom-nav-h:70px;}
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);padding-bottom:var(--bottom-nav-h);}
-
-  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);height:var(--nav-h);display:flex;align-items:center;}
-  .header-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;}
-  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-  .logo-icon{width:40px;height:40px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:white;font-size:18px;}
-  .logo-text{display:flex;flex-direction:column;line-height:1.1;}
-  .logo-name{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--text);letter-spacing:-0.3px;}
-  .logo-sub{font-size:10px;color:var(--muted);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;}
-  nav a{text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);padding:8px 14px;border-radius:8px;transition:all 0.2s;}
-  nav a:hover,nav a.active{color:var(--text);background:var(--light);}
-  .nav-whatsapp{display:flex;align-items:center;gap:6px;background:#25d366!important;color:white!important;border-radius:10px!important;padding:8px 16px!important;font-weight:600!important;}
-  .hamburger{display:none;background:none;border:none;cursor:pointer;font-size:22px;color:var(--text);}
-  .mobile-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:white;border-bottom:1px solid rgba(0,0,0,0.08);padding:16px 20px;z-index:99;flex-direction:column;gap:4px;box-shadow:var(--shadow-lg);}
-  .mobile-nav.open{display:flex;}
-  .mobile-nav a{padding:12px 16px;border-radius:10px;font-size:15px;font-weight:500;color:var(--text);text-decoration:none;}
-
-  /* ── HERO ── */
-  .about-hero{background:linear-gradient(135deg,#0f0f1a 0%,#1a1a3e 100%);padding:80px 20px;text-align:center;position:relative;overflow:hidden;}
-  .about-hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.3;pointer-events:none;}
-  .about-hero-orb-1{width:400px;height:400px;background:var(--c4);right:-100px;top:-100px;}
-  .about-hero-orb-2{width:300px;height:300px;background:var(--c5);left:-60px;bottom:-60px;}
-  .about-hero-orb-3{width:250px;height:250px;background:var(--c2);left:40%;top:10%;}
-  .hero-inner{position:relative;z-index:1;}
-  .about-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--c2);background:rgba(254,202,87,0.12);border:1px solid rgba(254,202,87,0.25);padding:6px 16px;border-radius:100px;margin-bottom:20px;}
-  .about-hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);color:white;letter-spacing:-1px;margin-bottom:20px;line-height:1.1;}
-  .about-hero h1 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-  .about-hero p{font-size:17px;color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto;line-height:1.7;}
-
-  /* ── STATS ── */
-  .about-stats{background:white;padding:56px 20px;}
-  .stats-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .stat-card{text-align:center;padding:28px 20px;background:var(--light);border-radius:var(--radius);}
-  .stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;background:var(--grad2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px;}
-  .stat-label{font-size:13px;font-weight:500;color:var(--muted);}
-
-  /* ── STORY ── */
-  .story-section{padding:80px 20px;background:var(--light);}
-  .story-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-  .story-visual{position:relative;}
-  .story-card{background:white;border-radius:24px;padding:40px;box-shadow:var(--shadow-lg);}
-  .story-card-icon{font-size:56px;margin-bottom:16px;display:block;}
-  .story-card h3{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--text);margin-bottom:12px;}
-  .story-card p{font-size:14px;color:var(--muted);line-height:1.7;}
-  .story-badge{position:absolute;background:var(--dark);color:white;padding:10px 16px;border-radius:12px;font-size:12px;font-weight:700;box-shadow:var(--shadow-lg);}
-  .story-badge-1{bottom:-16px;right:-20px;}
-  .story-badge-2{top:-16px;left:-20px;background:var(--grad2);}
-  .story-text{}
-  .section-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--c1);margin-bottom:10px;}
-  .section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.4rem);color:var(--text);letter-spacing:-0.5px;line-height:1.15;margin-bottom:24px;}
-  .story-text p{font-size:16px;line-height:1.8;color:var(--muted);margin-bottom:16px;}
-
-  /* ── MISSION / VALUES ── */
-  .values-section{padding:80px 20px;background:white;}
-  .values-inner{max-width:1200px;margin:0 auto;}
-  .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px;}
-  .value-card{border-radius:var(--radius);padding:32px 28px;border:2px solid transparent;transition:all 0.3s;}
-  .value-card:hover{transform:translateY(-4px);}
-  .value-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;color:white;margin-bottom:20px;}
-  .value-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:17px;color:var(--text);margin-bottom:10px;}
-  .value-card p{font-size:14px;line-height:1.7;color:var(--muted);}
-
-  /* ── TEAM ── */
-  .team-section{padding:80px 20px;background:linear-gradient(180deg,var(--light) 0%,white 100%);}
-  .team-inner{max-width:900px;margin:0 auto;text-align:center;}
-  .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px;margin-top:48px;}
-  .team-card{background:white;border-radius:24px;padding:36px 28px;box-shadow:var(--shadow);text-align:center;}
-  .team-avatar{width:80px;height:80px;border-radius:20px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:36px;color:white;}
-  .team-name{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--text);margin-bottom:6px;}
-  .team-role{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--c5);margin-bottom:14px;}
-  .team-bio{font-size:14px;line-height:1.7;color:var(--muted);}
-  .team-social{display:flex;justify-content:center;gap:10px;margin-top:16px;}
-  .team-social a{width:34px;height:34px;border-radius:10px;background:var(--light);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:14px;transition:all 0.2s;}
-  .team-social a:hover{background:var(--c5);color:white;}
-
-  /* ── CTA ── */
-  .about-cta{margin:0 20px 56px;max-width:1160px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,#0f0f1a,#1a1a3e);border-radius:24px;padding:60px 48px;text-align:center;position:relative;overflow:hidden;}
-  .about-cta-orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.3;pointer-events:none;}
-  .about-cta-orb-1{width:300px;height:300px;background:var(--c1);right:-60px;top:-60px;}
-  .about-cta-orb-2{width:200px;height:200px;background:var(--c5);left:-40px;bottom:-40px;}
-  .about-cta h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.6rem,3.5vw,2.4rem);color:white;letter-spacing:-0.5px;margin-bottom:14px;position:relative;z-index:1;}
-  .about-cta p{font-size:16px;color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 32px;position:relative;z-index:1;}
-  .btn-group{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1;}
-  .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--grad2);color:white;text-decoration:none;font-weight:700;font-size:15px;padding:14px 28px;border-radius:12px;transition:all 0.3s;box-shadow:0 4px 20px rgba(255,107,107,0.4);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,107,107,0.5);}
-  .btn-wa{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,0.15);border:1px solid rgba(37,211,102,0.4);color:#4ade80;text-decoration:none;font-weight:600;font-size:15px;padding:14px 28px;border-radius:12px;transition:all 0.3s;}
-  .btn-wa:hover{background:rgba(37,211,102,0.25);transform:translateY(-2px);}
-
-  footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:56px 20px 32px;}
-  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;}
-  .footer-logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:white;margin-bottom:12px;display:block;}
-  .footer-brand p{font-size:14px;line-height:1.7;max-width:260px;margin-bottom:20px;}
-  .social-links{display:flex;gap:10px;}
-  .social-link{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;font-size:15px;transition:all 0.2s;}
-  .social-link:hover{background:var(--c5);border-color:var(--c5);color:white;}
-  .footer-col h4{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:white;margin-bottom:16px;}
-  .footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;padding:4px 0;transition:color 0.2s;}
-  .footer-col a:hover{color:white;}
-  .footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  .footer-bottom p{font-size:13px;color:rgba(255,255,255,0.35);}
-  .bottom-nav{position:fixed;bottom:0;left:0;right:0;height:var(--bottom-nav-h);background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-top:1px solid rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-around;z-index:100;box-shadow:0 -4px 24px rgba(0,0,0,0.06);}
-  .bn-item{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase;transition:all 0.2s;padding:6px 12px;border-radius:12px;flex:1;max-width:80px;}
-  .bn-item i{font-size:20px;transition:all 0.2s;}
-  .bn-item:hover,.bn-item.active{color:var(--c5);}
-  .bn-item:hover i,.bn-item.active i{transform:translateY(-2px);}
-  .bn-wa{background:linear-gradient(135deg,#128c7e,#25d366)!important;color:white!important;border-radius:16px!important;padding:10px 18px!important;box-shadow:0 4px 16px rgba(37,211,102,0.4);max-width:90px!important;}
-  .bn-wa:hover{transform:scale(1.05);}
-  @media(max-width:900px){nav{display:none;}.hamburger{display:block;}.story-inner{grid-template-columns:1fr;gap:40px;}.stats-grid{grid-template-columns:repeat(2,1fr);}.footer-inner{grid-template-columns:1fr 1fr;}}
-  @media(max-width:600px){.stats-grid{grid-template-columns:repeat(2,1fr);}.team-grid{grid-template-columns:1fr;}.about-cta{padding:40px 24px;}.footer-inner{grid-template-columns:1fr;}}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: #ffffff; color: #1a1a2e; padding-bottom: 70px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .rainbow-text { background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, #5f27cd); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .site-header { background: rgba(255,255,255,0.98); backdrop-filter: blur(8px); border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-icon { width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, #5f27cd); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; color: #1a1a2e; }
+  .logo-sub { font-size: 10px; color: #6b7280; font-weight: 500; text-transform: uppercase; }
+  nav { display: flex; gap: 4px; align-items: center; }
+  nav a { text-decoration: none; font-size: 14px; font-weight: 500; color: #6b7280; padding: 8px 14px; border-radius: 8px; transition: all 0.2s; }
+  nav a:hover, nav a.active { color: #1a1a2e; background: #f8f9ff; }
+  .nav-whatsapp { background: #25d366 !important; color: white !important; border-radius: 10px !important; padding: 8px 16px !important; font-weight: 600 !important; }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; font-size: 22px; color: #1a1a2e; }
+  .mobile-nav { display: none; position: fixed; top: 64px; left: 0; right: 0; background: white; border-bottom: 1px solid rgba(0,0,0,0.08); padding: 16px 20px; z-index: 99; flex-direction: column; gap: 4px; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { padding: 12px 16px; border-radius: 10px; font-size: 15px; font-weight: 500; color: #1a1a2e; text-decoration: none; }
+  .about-container { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+  .about-container h1 { font-size: 2.5rem; margin-bottom: 20px; }
+  .about-container p { color: #4a5568; line-height: 1.6; margin-bottom: 20px; }
+  .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px; }
+  .value-card { text-align: center; padding: 24px; background: #f8f9fa; border-radius: 20px; }
+  .value-card i { font-size: 2rem; background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 12px; }
+  footer { background: #0f0f1a; color: rgba(255,255,255,0.6); padding: 56px 20px 32px; margin-top: 40px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .footer-logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: white; margin-bottom: 12px; display: block; }
+  .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 260px; margin-bottom: 20px; }
+  .footer-col h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: white; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+  .footer-col a:hover { color: white; }
+  .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; }
+  .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); border-top: 1px solid rgba(0,0,0,0.08); display: flex; justify-content: space-around; padding: 8px 0 15px; z-index: 100; }
+  .bn-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #6b7280; font-size: 10px; font-weight: 600; text-transform: uppercase; transition: all 0.2s; }
+  .bn-item i { font-size: 20px; margin-bottom: 3px; }
+  .bn-item:hover, .bn-item.active { color: #54a0ff; }
+  .bn-wa { background: linear-gradient(135deg, #128c7e, #25d366) !important; color: white !important; border-radius: 16px !important; padding: 8px 18px !important; }
+  @media (max-width: 768px) { nav { display: none; } .hamburger { display: block; } .footer-inner { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px) { .footer-inner { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <header>
   <div class="header-inner">
-    <a class="logo" href="index.html">
-      <div class="logo-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-      <div class="logo-text"><span class="logo-name">BLESSTech-ZM</span><span class="logo-sub">Accessories</span></div>
-    </a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://wa.me/260979603741?text=Hi!%20I'm%20interested%20in%20your%20phone%20accessories." target="_blank" class="nav-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order Now</a>
-    </nav>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><i class="fa-solid fa-bars" id="ham-icon"></i></button>
+    <a class="logo" href="index.html"><div class="logo-icon"><i class="fa-solid fa-mobile-screen"></i></div><div class="logo-text"><span class="logo-name">BLESSTech-ZM</span><span class="logo-sub">Accessories</span></div></a>
+    <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a><a href="https://wa.me/260979603741" target="_blank" class="nav-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order Now</a></nav>
+    <button class="hamburger" onclick="toggleMenu()"><i class="fa-solid fa-bars" id="ham-icon"></i></button>
   </div>
 </header>
-
 <div class="mobile-nav" id="mobile-nav">
-  <a href="index.html" onclick="toggleMenu()"><i class="fa-solid fa-house" style="width:20px;margin-right:8px"></i>Home</a>
-  <a href="shop.html" onclick="toggleMenu()"><i class="fa-solid fa-bag-shopping" style="width:20px;margin-right:8px"></i>Shop</a>
-  <a href="about.html" onclick="toggleMenu()"><i class="fa-solid fa-circle-info" style="width:20px;margin-right:8px"></i>About</a>
-  <a href="contact.html" onclick="toggleMenu()"><i class="fa-solid fa-envelope" style="width:20px;margin-right:8px"></i>Contact</a>
-  <a href="https://wa.me/260979603741" target="_blank" style="background:#25d366;color:white;border-radius:12px;margin-top:8px"><i class="fa-brands fa-whatsapp" style="width:20px;margin-right:8px"></i>Order on WhatsApp</a>
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="shop.html" onclick="toggleMenu()">Shop</a>
+  <a href="about.html" onclick="toggleMenu()">About</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="https://wa.me/260979603741" target="_blank" style="background:#25d366;color:white;border-radius:12px;margin-top:8px">Order on WhatsApp</a>
 </div>
 
-<!-- HERO -->
-<section class="about-hero">
-  <div class="about-hero-orb about-hero-orb-1"></div>
-  <div class="about-hero-orb about-hero-orb-2"></div>
-  <div class="about-hero-orb about-hero-orb-3"></div>
-  <div class="hero-inner">
-    <div class="about-tag">Our Story</div>
-    <h1>Built for <span>Zambia.</span><br>Built with Purpose.</h1>
-    <p>BLESSTech-ZM Accessories was born from a simple frustration: finding quality, affordable phone accessories in Lusaka was too hard. We fixed that.</p>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="about-stats">
-  <div class="stats-grid">
-    <div class="stat-card"><div class="stat-num">500+</div><div class="stat-label">Happy Customers</div></div>
-    <div class="stat-card"><div class="stat-num">1,200+</div><div class="stat-label">Products Sold</div></div>
-    <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Products in Stock</div></div>
-    <div class="stat-card"><div class="stat-num">4.9★</div><div class="stat-label">Average Rating</div></div>
-  </div>
-</section>
-
-<!-- STORY -->
-<section class="story-section">
-  <div class="story-inner">
-    <div class="story-visual">
-      <div class="story-card">
-        <span class="story-card-icon">📱</span>
-        <h3>Started in Lusaka, Growing Zambia-Wide</h3>
-        <p>What started as a small operation in Lusaka has grown into one of the most trusted phone accessories brands in Zambia — built on honesty, quality, and community.</p>
-      </div>
-      <div class="story-badge story-badge-1">🇿🇲 Proudly Zambian</div>
-      <div class="story-badge story-badge-2">✅ Est. 2022</div>
-    </div>
-    <div class="story-text">
-      <div class="section-tag">Our Journey</div>
-      <h2 class="section-title">From a Single WhatsApp Chat to Hundreds of Happy Customers</h2>
-      <p>It started with a single WhatsApp conversation. A friend needed a phone case and couldn't find a good one at a fair price in Lusaka. We sourced one, delivered it the same day, and that was the beginning of BLESSTech-ZM.</p>
-      <p>Today, we carry over 50 products — from premium cases and fast chargers to wireless earbuds and power banks. Every product is hand-selected for quality, every price is set fairly, and every order is handled personally.</p>
-      <p>We believe Zambians deserve the same quality phone accessories available to anyone in the world — without overpaying or waiting weeks. That belief drives everything we do.</p>
-    </div>
-  </div>
-</section>
-
-<!-- VALUES -->
-<section class="values-section">
-  <div class="values-inner">
-    <div style="text-align:center">
-      <div class="section-tag">What We Stand For</div>
-      <h2 class="section-title">Our Core Values</h2>
-    </div>
-    <div class="values-grid">
-      <div class="value-card" style="background:linear-gradient(135deg,rgba(255,107,107,0.06),rgba(254,202,87,0.06));border-color:rgba(255,107,107,0.15)">
-        <div class="value-icon" style="background:linear-gradient(135deg,#ff6b6b,#feca57)"><i class="fa-solid fa-certificate"></i></div>
-        <h3>Genuine Quality</h3>
-        <p>We never sell counterfeits. Every accessory in our store is authentic, tested, and sourced from verified suppliers. We stake our reputation on it.</p>
-      </div>
-      <div class="value-card" style="background:linear-gradient(135deg,rgba(84,160,255,0.06),rgba(95,39,205,0.06));border-color:rgba(84,160,255,0.15)">
-        <div class="value-icon" style="background:linear-gradient(135deg,#54a0ff,#5f27cd)"><i class="fa-solid fa-handshake"></i></div>
-        <h3>Honest Pricing</h3>
-        <p>The price you see is the price you pay. No hidden charges, no inflated "before-discount" prices. Fair prices for everyone in Zambia.</p>
-      </div>
-      <div class="value-card" style="background:linear-gradient(135deg,rgba(72,219,251,0.06),rgba(84,160,255,0.06));border-color:rgba(72,219,251,0.15)">
-        <div class="value-icon" style="background:linear-gradient(135deg,#48dbfb,#54a0ff)"><i class="fa-solid fa-truck-fast"></i></div>
-        <h3>Speed & Reliability</h3>
-        <p>Same-day delivery within Lusaka for orders before 2pm. We know your phone is important — we get your accessories to you fast.</p>
-      </div>
-      <div class="value-card" style="background:linear-gradient(135deg,rgba(255,159,243,0.06),rgba(255,107,107,0.06));border-color:rgba(255,159,243,0.15)">
-        <div class="value-icon" style="background:linear-gradient(135deg,#ff9ff3,#ff6b6b)"><i class="fa-solid fa-heart"></i></div>
-        <h3>Community First</h3>
-        <p>We are Zambian. We reinvest in our community, support local, and take pride in building a brand that represents Zambia at its best.</p>
-      </div>
-      <div class="value-card" style="background:linear-gradient(135deg,rgba(95,39,205,0.06),rgba(72,219,251,0.06));border-color:rgba(95,39,205,0.15)">
-        <div class="value-icon" style="background:linear-gradient(135deg,#5f27cd,#48dbfb)"><i class="fa-solid fa-headset"></i></div>
-        <h3>Personal Service</h3>
-        <p>Every order is handled personally. You're not a number — you're a neighbour. We're available on WhatsApp 7 days a week.</p>
-      </div>
-      <div class="value-card" style="background:linear-gradient(135deg,rgba(254,202,87,0.06),rgba(255,107,107,0.06));border-color:rgba(254,202,87,0.15)">
-        <div class="value-icon" style="background:linear-gradient(135deg,#feca57,#ff6b6b)"><i class="fa-solid fa-rotate-left"></i></div>
-        <h3>Peace of Mind</h3>
-        <p>Not satisfied? Our 7-day return policy means you can buy with confidence. Your happiness is more important than a single sale.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="team-section">
-  <div class="team-inner">
-    <div class="section-tag">The People Behind the Brand</div>
-    <h2 class="section-title">Meet the Team</h2>
-    <p style="color:var(--muted);font-size:16px;max-width:500px;margin:0 auto">A small, dedicated team passionate about phones, technology, and serving Lusaka's growing community.</p>
-    <div class="team-grid">
-      <div class="team-card">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#ff6b6b,#feca57)">👨‍💻</div>
-        <div class="team-name">Barack</div>
-        <div class="team-role">Co-Founder & CEO</div>
-        <p class="team-bio">The visionary behind BLESSTech-ZM. Passionate about technology and making quality accessories accessible to every Zambian.</p>
-        <div class="team-social">
-          <a href="https://wa.me/260979603741" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-avatar" style="background:linear-gradient(135deg,#54a0ff,#5f27cd)">👨‍💼</div>
-        <div class="team-name">Sylvester Mwila</div>
-        <div class="team-role">Co-Founder & Operations</div>
-        <p class="team-bio">Handles logistics, supplier relationships, and ensures every order is fulfilled on time. The backbone of BLESSTech-ZM's delivery promise.</p>
-        <div class="team-social">
-          <a href="https://wa.me/260979603741" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<div style="padding:0 0 56px">
-  <div class="about-cta">
-    <div class="about-cta-orb about-cta-orb-1"></div>
-    <div class="about-cta-orb about-cta-orb-2"></div>
-    <h2>Ready to Experience the BLESSTech Difference?</h2>
-    <p>Browse our full range of premium accessories and order in minutes via WhatsApp.</p>
-    <div class="btn-group">
-      <a href="shop.html" class="btn-primary"><i class="fa-solid fa-bag-shopping"></i> Browse Products</a>
-      <a href="https://wa.me/260979603741?text=Hi!%20I'd%20like%20to%20know%20more%20about%20BLESSTech-ZM." target="_blank" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> Chat With Us</a>
-    </div>
+<div class="about-container">
+  <h1>About <span class="rainbow-text">BLESSTech-ZM</span></h1>
+  <p>We are a Lusaka-based online store specializing in quality phone accessories. Our mission is to provide affordable, genuine accessories with fast delivery across Lusaka.</p>
+  <p>Founded by Barack Blessings, BLESSTech-ZM Accessories was created to solve a simple problem: Zambians should have easy access to quality phone accessories without overpaying or waiting weeks for delivery.</p>
+  <div class="values-grid">
+    <div class="value-card"><i class="fas fa-truck"></i><h3>Fast Delivery</h3><p>Same-day in Lusaka</p></div>
+    <div class="value-card"><i class="fas fa-shield-alt"></i><h3>Quality Guaranteed</h3><p>Genuine products</p></div>
+    <div class="value-card"><i class="fab fa-whatsapp"></i><h3>Easy Ordering</h3><p>Order on WhatsApp</p></div>
+    <div class="value-card"><i class="fas fa-hand-holding-usd"></i><h3>Best Prices</h3><p>Affordable rates</p></div>
   </div>
 </div>
 
-<footer>
+<footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="footer-logo-text">BLESSTech-ZM 📱</span>
-      <p>Your #1 source for premium phone accessories in Lusaka, Zambia.</p>
-      <div class="social-links">
-        <a href="https://wa.me/260979603741" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </div>
+    <div class="footer-brand"><span class="footer-logo-text">BLESSTech-ZM 📱</span><p>Your #1 source for premium phone accessories in Lusaka, Zambia.</p></div>
     <div class="footer-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-    <div class="footer-col"><h4>Categories</h4><a href="shop.html?cat=case">Cases</a><a href="shop.html?cat=charger">Chargers</a><a href="shop.html?cat=cable">Cables</a><a href="shop.html?cat=earphone">Earphones</a><a href="shop.html?cat=powerbank">Power Banks</a></div>
-    <div class="footer-col"><h4>Contact</h4><a href="https://wa.me/260979603741"><i class="fa-brands fa-whatsapp" style="margin-right:6px"></i>+260 979 603 741</a><a href="contact.html"><i class="fa-solid fa-location-dot" style="margin-right:6px"></i>Lusaka, Zambia</a></div>
+    <div class="footer-col"><h4>Categories</h4><a href="shop.html?cat=case">Cases</a><a href="shop.html?cat=charger">Chargers</a><a href="shop.html?cat=cable">Cables</a><a href="shop.html?cat=earphone">Earphones</a><a href="shop.html?cat=powerbank">Power Banks</a><a href="shop.html?cat=protector">Protectors</a><a href="shop.html?cat=phone">Phones</a><a href="shop.html?cat=other">Other</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="https://wa.me/260979603741"><i class="fa-brands fa-whatsapp"></i> +260 979 603 741</a><a href="contact.html"><i class="fa-solid fa-location-dot"></i> Lusaka, Zambia</a></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2025 BLESSTech-ZM Accessories. All rights reserved.</p>
-    <p>Built with ❤️ in Lusaka, Zambia</p>
-  </div>
+  <div class="footer-bottom"><p>© 2026 BLESSTech-ZM Accessories | Jesus loves you. ❤️</p></div>
 </footer>
 
 <nav class="bottom-nav">
   <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
   <a href="shop.html" class="bn-item"><i class="fa-solid fa-bag-shopping"></i>Shop</a>
-  <a href="https://wa.me/260979603741?text=Hi!%20I'd%20like%20to%20order%20phone%20accessories." target="_blank" class="bn-item bn-wa"><i class="fa-brands fa-whatsapp"></i>Order</a>
+  <a href="https://wa.me/260979603741" target="_blank" class="bn-item bn-wa"><i class="fa-brands fa-whatsapp"></i>Order</a>
   <a href="contact.html" class="bn-item"><i class="fa-solid fa-envelope"></i>Contact</a>
 </nav>
 
 <script>
-function toggleMenu(){const nav=document.getElementById('mobile-nav');const icon=document.getElementById('ham-icon');const open=nav.classList.toggle('open');icon.className=open?'fa-solid fa-xmark':'fa-solid fa-bars';}
+function toggleMenu() { const nav = document.getElementById('mobile-nav'); const icon = document.getElementById('ham-icon'); const open = nav.classList.toggle('open'); icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'; }
+if (window.netlifyIdentity) { window.netlifyIdentity.on('init', user => { if (!user) window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); }); }
 </script>
 </body>
 </html>
