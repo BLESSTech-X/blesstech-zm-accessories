@@ -42,6 +42,7 @@
     .product-card h3 { padding: 16px 16px 8px; font-size: 1rem; }
     .product-card .price { padding: 0 16px; font-size: 1.2rem; font-weight: bold; background: linear-gradient(135deg, #ff6b6b, #feca57); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .loading { text-align: center; padding: 60px; color: #a0aec0; font-size: 1.1rem; }
+    .no-products { text-align: center; padding: 60px; color: #a0aec0; }
     .site-footer { background: #1a1a2e; color: #a0aec0; padding: 40px 0 20px; margin-top: 40px; }
     .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px; }
     .footer-links-col h4 { color: white; margin-bottom: 16px; }
@@ -71,11 +72,19 @@
 
   <div class="shop-header"><h1>All <span class="rainbow-text">Products</span></h1><p>Browse our collection of phone accessories</p></div>
 
-  <div class="categories-bar"><div class="categories-scroll" id="categoryBtns"><button class="cat-btn active" data-cat="all"><i class="fas fa-th"></i> All</button><button class="cat-btn" data-cat="case"><i class="fas fa-mobile-alt"></i> Cases</button><button class="cat-btn" data-cat="charger"><i class="fas fa-bolt"></i> Chargers</button><button class="cat-btn" data-cat="cable"><i class="fas fa-plug"></i> Cables</button><button class="cat-btn" data-cat="earphone"><i class="fas fa-headphones"></i> Earphones</button><button class="cat-btn" data-cat="powerbank"><i class="fas fa-battery-full"></i> Power Banks</button><button class="cat-btn" data-cat="protector"><i class="fas fa-shield-alt"></i> Protectors</button></div></div>
+  <div class="categories-bar"><div class="categories-scroll" id="categoryBtns">
+    <button class="cat-btn active" data-cat="all"><i class="fas fa-th"></i> All</button>
+    <button class="cat-btn" data-cat="case"><i class="fas fa-mobile-alt"></i> Cases</button>
+    <button class="cat-btn" data-cat="charger"><i class="fas fa-bolt"></i> Chargers</button>
+    <button class="cat-btn" data-cat="cable"><i class="fas fa-plug"></i> Cables</button>
+    <button class="cat-btn" data-cat="earphone"><i class="fas fa-headphones"></i> Earphones</button>
+    <button class="cat-btn" data-cat="powerbank"><i class="fas fa-battery-full"></i> Power Banks</button>
+    <button class="cat-btn" data-cat="protector"><i class="fas fa-shield-alt"></i> Protectors</button>
+  </div></div>
 
   <div class="container"><div class="products-grid" id="productsGrid"><div class="loading"><i class="fas fa-spinner fa-spin"></i> Loading products...</div></div></div>
 
-  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p id="copyright">&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-links-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-links-col"><h4>Categories</h4><ul><li><a href="shop.html?cat=case">Cases</a></li><li><a href="shop.html?cat=charger">Chargers</a></li><li><a href="shop.html?cat=cable">Cables</a></li><li><a href="shop.html?cat=earphone">Earphones</a></li><li><a href="shop.html?cat=powerbank">Power Banks</a></li></ul></div><div class="footer-links-col"><h4>Contact</h4><ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/260979603741">+260 979 603 741</a></li><li>Lusaka, Zambia</li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️</p></div></div></footer>
 
   <div class="mobile-tab-bar"><a href="index.html" class="tab-bar-item"><i class="fas fa-home"></i><span>Home</span></a><a href="shop.html" class="tab-bar-item active"><i class="fas fa-store"></i><span>Shop</span></a><a href="https://wa.me/260979603741" class="tab-bar-item"><i class="fab fa-whatsapp"></i><span>Order</span></a><a href="contact.html" class="tab-bar-item"><i class="fas fa-envelope"></i><span>Contact</span></a></div>
 
@@ -89,81 +98,74 @@
     let allProducts = [];
     let currentFilter = 'all';
 
-    // Load footer from CMS
-    async function loadFooter() {
-      try {
-        const footerRes = await fetch('/content/settings/footer.json');
-        if (footerRes.ok) {
-          const footer = await footerRes.json();
-          document.getElementById('copyright').innerHTML = footer.copyright;
-        }
-      } catch(e) { console.log('Footer loading...'); }
-    }
-
-    // Load category buttons from CMS
-    async function loadCategories() {
-      try {
-        const catRes = await fetch('/content/settings/categories.json');
-        if (catRes.ok) {
-          const cats = await catRes.json();
-          document.getElementById('categoryBtns').innerHTML = `<button class="cat-btn active" data-cat="all"><i class="fas fa-th"></i> All</button>` + cats.categories.map(c => `<button class="cat-btn" data-cat="${c.filter}"><i class="${c.icon}"></i> ${c.title}</button>`).join('');
-          attachCategoryEvents();
-        }
-      } catch(e) { console.log('Using default categories'); attachCategoryEvents(); }
-    }
-
-    function attachCategoryEvents() {
-      document.querySelectorAll('.cat-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          currentFilter = btn.dataset.cat;
-          renderProducts();
-        });
+    // Category filter
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.cat;
+        renderProducts();
       });
-    }
+    });
 
-    // Load products from CMS
-    async function loadProducts() {
+    // Fetch products from GitHub directly (since Netlify serves the raw files)
+    async function fetchProductFiles() {
       const grid = document.getElementById('productsGrid');
       try {
+        // First, try to get the list of product files from the CMS index
         const idxRes = await fetch('/content/products/index.json');
         if (idxRes.ok) {
           const files = await idxRes.json();
-          allProducts = await Promise.all(files.map(async (f) => {
-            const res = await fetch(`/content/products/${f}`);
-            const data = await res.json();
-            return {
-              id: f.replace('.md', ''),
-              title: data.title,
-              price: data.price,
-              image: data.image,
-              category: data.category,
-              featured: data.featured || false
-            };
+          allProducts = await Promise.all(files.map(async (file) => {
+            const res = await fetch(`/content/products/${file}`);
+            const text = await res.text();
+            return parseMarkdownProduct(text, file.replace('.md', ''));
           }));
         } else {
-          throw new Error('No products yet');
+          // Fallback: hardcoded products for testing
+          allProducts = [
+            { id: "iphone-11", title: "iPhone 11", price: 2500, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case" },
+            { id: "fast-charger", title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger" },
+            { id: "power-bank", title: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "powerbank" },
+            { id: "earphones", title: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "earphone" }
+          ];
         }
       } catch(e) {
-        console.log('No products in CMS, using fallback');
+        console.log('Error loading products, using fallback');
         allProducts = [
-          { id: 1, title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger" },
-          { id: 2, title: "Premium Phone Case", price: 100, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case" },
-          { id: 3, title: "Power Bank 10000mAh", price: 200, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "powerbank" },
-          { id: 4, title: "Wireless Earphones", price: 150, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300", category: "earphone" }
+          { id: "iphone-11", title: "iPhone 11", price: 2500, image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300", category: "case" },
+          { id: "fast-charger", title: "Fast Charger", price: 80, image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300", category: "charger" }
         ];
       }
       renderProducts();
     }
 
+    function parseMarkdownProduct(markdown, id) {
+      const titleMatch = markdown.match(/title:\s*(.+)/);
+      const priceMatch = markdown.match(/price:\s*(\d+)/);
+      const descMatch = markdown.match(/description:\s*(.+)/);
+      const imageMatch = markdown.match(/image:\s*(.+)/);
+      const categoryMatch = markdown.match(/category:\s*(.+)/);
+      
+      return {
+        id: id,
+        title: titleMatch ? titleMatch[1].trim() : 'Product',
+        price: priceMatch ? parseInt(priceMatch[1]) : 0,
+        description: descMatch ? descMatch[1].trim() : '',
+        image: imageMatch ? imageMatch[1].trim() : 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300',
+        category: categoryMatch ? categoryMatch[1].trim() : 'other'
+      };
+    }
+
     function renderProducts() {
       const grid = document.getElementById('productsGrid');
       const filtered = currentFilter === 'all' ? allProducts : allProducts.filter(p => p.category === currentFilter);
+      
       if (filtered.length === 0) {
-        grid.innerHTML = '<div style="text-align:center; padding:60px;">No products in this category yet.</div>';
+        grid.innerHTML = '<div class="no-products">No products found in this category.</div>';
         return;
       }
+      
       grid.innerHTML = filtered.map(p => `
         <div class="product-card" onclick="location.href='product.html?id=${p.id}'">
           <img src="${p.image}" alt="${p.title}">
@@ -173,9 +175,8 @@
       `).join('');
     }
 
-    loadFooter();
-    loadCategories();
-    loadProducts();
+    // Start loading products
+    fetchProductFiles();
   </script>
 </body>
 </html>
