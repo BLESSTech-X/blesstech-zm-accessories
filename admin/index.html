@@ -1,12 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BLESSTech-ZM Accessories - CMS</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <title>BLESSTech-ZM Accessories - Admin</title>
+  <style>body { margin: 0; font-family: system-ui, sans-serif; background: #0f172a; }</style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+<script>window.CMS_MANUAL_INIT = true;</script>
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+<script>
+CMS.init({
+  config: {
+    backend: {
+      name: 'git-gateway',
+      branch: 'main'
+    },
+    media_folder: 'images',
+    public_folder: '/images',
+
+    collections: [
+      {
+        name: 'products',
+        label: '📦 Products',
+        label_singular: 'Product',
+        description: 'Add, edit, or remove products. "Featured" products appear on the homepage slider.',
+        folder: 'content/products',
+        create: true,
+        slug: '{{slug}}',
+        summary: '{{fields.title}} - ZMW {{fields.price}} {{#if fields.featured}}⭐ Featured{{/if}}',
+        fields: [
+          { label: 'Product Name', name: 'title', widget: 'string' },
+          { label: 'Price (ZMW)', name: 'price', widget: 'number', value_type: 'int' },
+          { 
+            label: 'Category', 
+            name: 'category', 
+            widget: 'select', 
+            options: ['case', 'charger', 'cable', 'earphone', 'powerbank', 'protector', 'phone', 'other'],
+            default: 'case'
+          },
+          { label: 'Product Image', name: 'image', widget: 'image' },
+          { label: 'Description', name: 'description', widget: 'text', required: false },
+          { 
+            label: '⭐ Featured Product', 
+            name: 'featured', 
+            widget: 'boolean', 
+            default: false,
+            hint: 'When checked, this product will appear in the homepage auto-scrolling slider'
+          }
+        ]
+      }
+    ]
+  }
+});
+</script>
+
 </body>
 </html>
