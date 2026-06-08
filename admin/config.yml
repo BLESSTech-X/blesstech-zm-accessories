@@ -14,7 +14,7 @@ collections:
     fields:
       - { label: "Product Name", name: "title", widget: "string" }
       - { label: "Price (ZMW)", name: "price", widget: "number", value_type: "int" }
-      - { label: "Category", name: "category", widget: "select", options: ["case", "charger", "cable", "earphone", "powerbank", "protector"] }
+      - { label: "Category", name: "category", widget: "select", options: ["case", "charger", "cable", "earphone", "powerbank", "protector", "phone", "other"] }
       - { label: "Product Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Featured (show on homepage slider)", name: "featured", widget: "boolean", default: false }
@@ -26,8 +26,8 @@ collections:
         name: "hero"
         file: "content/settings/hero.json"
         fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string", default: "Top Phone Accessories in Lusaka" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text", default: "Premium cases, chargers, cables & more. Fast delivery across Zambia." }
+          - { label: "Hero Title", name: "hero_title", widget: "string", default: "Premium Phone Accessories in Lusaka" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text", default: "Quality cases, chargers, cables, earphones & power banks. Fast delivery across Lusaka." }
           - { label: "Primary Button Text", name: "btn_primary", widget: "string", default: "Shop Now" }
           - { label: "Secondary Button Text", name: "btn_secondary", widget: "string", default: "Order on WhatsApp" }
 
@@ -40,21 +40,3 @@ collections:
           - { label: "Location", name: "location", widget: "string", default: "Lusaka, Zambia" }
           - { label: "Business Hours", name: "hours", widget: "string", default: "Mon–Sat: 8am – 7pm" }
           - { label: "Email", name: "email", widget: "string", default: "singbless89@gmail.com" }
-
-      - label: "Stats Section"
-        name: "stats"
-        file: "content/settings/stats.json"
-        fields:
-          - label: "Stats"
-            name: "stats"
-            widget: "list"
-            fields:
-              - { label: "Number", name: "number", widget: "string", default: "500+" }
-              - { label: "Label", name: "label", widget: "string", default: "Happy Customers" }
-
-      - label: "Footer Settings"
-        name: "footer"
-        file: "content/settings/footer.json"
-        fields:
-          - { label: "Copyright Text", name: "copyright", widget: "string", default: "&copy; 2026 BLESSTech-ZM Accessories. All rights reserved." }
-          - { label: "Footer Tagline", name: "tagline", widget: "string", default: "Built with ❤️ in Lusaka, Zambia | Jesus loves you. ❤️" }
