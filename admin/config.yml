@@ -6,6 +6,7 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
+  # ========== PRODUCTS ==========
   - name: "products"
     label: "Products"
     folder: "content/products"
@@ -14,23 +15,38 @@ collections:
     fields:
       - { label: "Product Name", name: "title", widget: "string" }
       - { label: "Price (ZMW)", name: "price", widget: "number", value_type: "int" }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Description", name: "description", widget: "text" }
       - { label: "Product Image", name: "image", widget: "image" }
       - { label: "Category", name: "category", widget: "select", options: ["case", "charger", "cable", "earphone", "powerbank", "protector"] }
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
-      - { label: "WhatsApp Message", name: "wa_message", widget: "string", default: "I'm interested in this product" }
 
+  # ========== HOMEPAGE SETTINGS ==========
   - name: "settings"
     label: "Site Settings"
     files:
+      # Hero Section
       - name: "homepage"
-        label: "Homepage Hero"
+        label: "Hero Section"
         file: "content/settings/homepage.json"
         fields:
           - { label: "Hero Title", name: "hero_title", widget: "string" }
           - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
           - { label: "Button Text", name: "btn_text", widget: "string", default: "Shop Now" }
-      
+          - { label: "Hero Background Image", name: "hero_image", widget: "image", required: false }
+
+      # Stats Section
+      - name: "stats"
+        label: "Stats Section"
+        file: "content/settings/stats.json"
+        fields:
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string", default: "500+" }
+              - { label: "Label", name: "label", widget: "string", default: "Happy Customers" }
+
+      # Categories Section
       - name: "categories"
         label: "Categories Section"
         file: "content/settings/categories.json"
@@ -42,9 +58,11 @@ collections:
               - { label: "Icon Class", name: "icon", widget: "string", default: "fas fa-mobile-alt" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
-      
+              - { label: "Filter Value", name: "filter", widget: "string", hint: "case, charger, cable, earphone, powerbank, protector" }
+
+      # Features Section (Why Choose Us)
       - name: "features"
-        label: "Why Choose Us Section"
+        label: "Features Section"
         file: "content/settings/features.json"
         fields:
           - label: "Features"
@@ -54,9 +72,19 @@ collections:
               - { label: "Icon Class", name: "icon", widget: "string", default: "fas fa-truck" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
-      
+
+      # Auto-Scroll Slider Settings
+      - name: "slider"
+        label: "Auto-Scroll Slider"
+        file: "content/settings/slider.json"
+        fields:
+          - { label: "Slider Title", name: "title", widget: "string", default: "✨ Trending Now" }
+          - { label: "Auto-Scroll Speed (ms)", name: "scroll_speed", widget: "number", default: 3500, hint: "3500 = 3.5 seconds" }
+          - { label: "Enable Auto-Scroll", name: "auto_scroll", widget: "boolean", default: true }
+
+      # Footer Section
       - name: "footer"
-        label: "Footer Settings"
+        label: "Footer"
         file: "content/settings/footer.json"
         fields:
           - { label: "Copyright Text", name: "copyright", widget: "string", default: "&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️" }
@@ -67,20 +95,26 @@ collections:
               - { label: "Link Text", name: "text", widget: "string" }
               - { label: "Link URL", name: "url", widget: "string" }
 
+  # ========== PAGES ==========
   - name: "pages"
     label: "Pages"
     files:
+      # About Page
       - name: "about"
         label: "About Page"
         file: "content/pages/about.json"
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Content", name: "content", widget: "markdown" }
-          - label: "Our Promise Items"
-            name: "promises"
+          - label: "Values"
+            name: "values"
             widget: "list"
-            field: { label: "Promise", name: "promise", widget: "string" }
-      
+            fields:
+              - { label: "Icon Class", name: "icon", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+
+      # Contact Page
       - name: "contact"
         label: "Contact Page"
         file: "content/pages/contact.json"
