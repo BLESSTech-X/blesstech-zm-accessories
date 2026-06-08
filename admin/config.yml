@@ -6,7 +6,6 @@ media_folder: "images"
 public_folder: "/images"
 
 collections:
-  # ========== PRODUCTS ==========
   - name: "products"
     label: "Products"
     folder: "content/products"
@@ -20,11 +19,9 @@ collections:
       - { label: "Category", name: "category", widget: "select", options: ["case", "charger", "cable", "earphone", "powerbank", "protector"] }
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
 
-  # ========== HOMEPAGE SETTINGS ==========
   - name: "settings"
     label: "Site Settings"
     files:
-      # Hero Section
       - name: "homepage"
         label: "Hero Section"
         file: "content/settings/homepage.json"
@@ -32,96 +29,12 @@ collections:
           - { label: "Hero Title", name: "hero_title", widget: "string" }
           - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
           - { label: "Button Text", name: "btn_text", widget: "string", default: "Shop Now" }
-          - { label: "Hero Background Image", name: "hero_image", widget: "image", required: false }
 
-      # Stats Section
-      - name: "stats"
-        label: "Stats Section"
-        file: "content/settings/stats.json"
-        fields:
-          - label: "Stats"
-            name: "stats"
-            widget: "list"
-            fields:
-              - { label: "Number", name: "number", widget: "string", default: "500+" }
-              - { label: "Label", name: "label", widget: "string", default: "Happy Customers" }
-
-      # Categories Section
-      - name: "categories"
-        label: "Categories Section"
-        file: "content/settings/categories.json"
-        fields:
-          - label: "Categories"
-            name: "categories"
-            widget: "list"
-            fields:
-              - { label: "Icon Class", name: "icon", widget: "string", default: "fas fa-mobile-alt" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-              - { label: "Filter Value", name: "filter", widget: "string", hint: "case, charger, cable, earphone, powerbank, protector" }
-
-      # Features Section (Why Choose Us)
-      - name: "features"
-        label: "Features Section"
-        file: "content/settings/features.json"
-        fields:
-          - label: "Features"
-            name: "features"
-            widget: "list"
-            fields:
-              - { label: "Icon Class", name: "icon", widget: "string", default: "fas fa-truck" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-
-      # Auto-Scroll Slider Settings
-      - name: "slider"
-        label: "Auto-Scroll Slider"
-        file: "content/settings/slider.json"
-        fields:
-          - { label: "Slider Title", name: "title", widget: "string", default: "✨ Trending Now" }
-          - { label: "Auto-Scroll Speed (ms)", name: "scroll_speed", widget: "number", default: 3500, hint: "3500 = 3.5 seconds" }
-          - { label: "Enable Auto-Scroll", name: "auto_scroll", widget: "boolean", default: true }
-
-      # Footer Section
-      - name: "footer"
-        label: "Footer"
-        file: "content/settings/footer.json"
-        fields:
-          - { label: "Copyright Text", name: "copyright", widget: "string", default: "&copy; 2026 BLESSTech-ZM Accessories. Jesus loves you. ❤️" }
-          - label: "Footer Links"
-            name: "links"
-            widget: "list"
-            fields:
-              - { label: "Link Text", name: "text", widget: "string" }
-              - { label: "Link URL", name: "url", widget: "string" }
-
-  # ========== PAGES ==========
-  - name: "pages"
-    label: "Pages"
-    files:
-      # About Page
-      - name: "about"
-        label: "About Page"
-        file: "content/pages/about.json"
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Content", name: "content", widget: "markdown" }
-          - label: "Values"
-            name: "values"
-            widget: "list"
-            fields:
-              - { label: "Icon Class", name: "icon", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
-
-      # Contact Page
       - name: "contact"
-        label: "Contact Page"
-        file: "content/pages/contact.json"
+        label: "Contact Information"
+        file: "content/contact/info.json"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
           - { label: "WhatsApp Number", name: "whatsapp", widget: "string", default: "+260979603741" }
           - { label: "Phone Number", name: "phone", widget: "string", default: "+260979603741" }
           - { label: "Location", name: "location", widget: "string", default: "Lusaka, Zambia" }
           - { label: "Business Hours", name: "hours", widget: "string", default: "Mon-Sat: 9am - 6pm" }
-          - { label: "Email", name: "email", widget: "string", default: "singbless89@gmail.com" }
