@@ -83,7 +83,7 @@
   <a href="https://wa.me/260979603741" target="_blank" style="background:#25d366;color:white;border-radius:12px;margin-top:8px">Order on WhatsApp</a>
 </div>
 
-<div class="shop-header"><h1>All <span class="rainbow-text">Products</span></h1><p>Browse our collection of phone accessories and gadgets</p></div>
+<div class="shop-header"><h1>All <span class="rainbow-text">Products</span></h1><p>Browse our collection of phone accessories</p></div>
 
 <div class="filter-bar"><div class="filter-inner" id="filterBar"></div></div>
 
@@ -122,27 +122,29 @@ const CAT_COLORS = { case:'linear-gradient(135deg,#54a0ff,#5f27cd)', charger:'li
 async function loadProducts() {
   try {
     const idxRes = await fetch('/content/products/index.json');
-    if (idxRes.ok) {
-      const files = await idxRes.json();
-      allProducts = await Promise.all(files.map(async f => {
-        const res = await fetch(`/content/products/${f}`);
-        const text = await res.text();
-        const titleMatch = text.match(/title:\s*(.+)/);
-        const priceMatch = text.match(/price:\s*(\d+)/);
-        const catMatch = text.match(/category:\s*(.+)/);
-        const imageMatch = text.match(/image:\s*(.+)/);
-        const descMatch = text.match(/description:\s*(.+)/);
-        return {
-          slug: f.replace('.md', ''),
-          title: titleMatch ? titleMatch[1].trim() : 'Product',
-          price: priceMatch ? parseInt(priceMatch[1]) : 0,
-          category: catMatch ? catMatch[1].trim() : 'other',
-          image: imageMatch ? imageMatch[1].trim() : '',
-          description: descMatch ? descMatch[1].trim() : ''
-        };
-      }));
-    } else throw new Error('No CMS');
-  } catch(e) { console.log('No CMS products'); allProducts = []; }
+    if (!idxRes.ok) throw new Error('No products');
+    const files = await idxRes.json();
+    allProducts = await Promise.all(files.map(async f => {
+      const res = await fetch(`/content/products/${f}`);
+      const text = await res.text();
+      const titleMatch = text.match(/title:\s*(.+)/);
+      const priceMatch = text.match(/price:\s*(\d+)/);
+      const catMatch = text.match(/category:\s*(.+)/);
+      const imageMatch = text.match(/image:\s*(.+)/);
+      const descMatch = text.match(/description:\s*(.+)/);
+      return {
+        slug: f.replace('.md', ''),
+        title: titleMatch ? titleMatch[1].trim() : 'Product',
+        price: priceMatch ? parseInt(priceMatch[1]) : 0,
+        category: catMatch ? catMatch[1].trim() : 'other',
+        image: imageMatch ? imageMatch[1].trim() : '',
+        description: descMatch ? descMatch[1].trim() : ''
+      };
+    }));
+  } catch(e) {
+    console.log('No CMS products yet');
+    allProducts = [];
+  }
   updateCounts();
   const urlCat = new URLSearchParams(window.location.search).get('cat');
   if (urlCat && ['case','charger','cable','earphone','powerbank','protector','phone','other'].includes(urlCat)) filterProducts(urlCat);
