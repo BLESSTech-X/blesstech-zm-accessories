@@ -5,27 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>BLESSTech-ZM | Admin Panel</title>
-  <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     body { margin: 0; font-family: sans-serif; background: #0f0f1a; }
   </style>
 </head>
 <body>
-  <!-- Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // ── SINGLE-FILE EMBEDDED CMS CONFIG ──
-    // This replaces the need for a separate admin/config.yml file.
-    // Products only – no other collections.
     CMS.init({
       config: {
         backend: {
           name: "git-gateway",
           branch: "main"
         },
-        media_folder: "assets/images/uploads",
-        public_folder: "/assets/images/uploads",
+        media_folder: "images",
+        public_folder: "/images",
         collections: [
           {
             name: "products",
@@ -36,22 +31,18 @@
             delete: true,
             slug: "{{slug}}",
             identifier_field: "title",
-            summary: "{{title}} – ZMW {{price}} ({{category}})",
-            sortable_fields: ["title", "price", "category"],
+            summary: "{{title}} – ZMW {{price}}",
             fields: [
               {
                 label: "Product Name",
                 name: "title",
-                widget: "string",
-                hint: "e.g. 20W USB-C Fast Charger"
+                widget: "string"
               },
               {
                 label: "Price (ZMW)",
                 name: "price",
                 widget: "number",
-                value_type: "float",
-                min: 0,
-                hint: "Enter price in Zambian Kwacha (ZMW)"
+                value_type: "int"
               },
               {
                 label: "Category",
@@ -61,32 +52,30 @@
                   { label: "Phone Case", value: "case" },
                   { label: "Charger", value: "charger" },
                   { label: "Cable", value: "cable" },
-                  { label: "Earphone / Headphone", value: "earphone" },
+                  { label: "Earphone", value: "earphone" },
                   { label: "Power Bank", value: "powerbank" },
                   { label: "Screen Protector", value: "protector" },
                   { label: "Phone", value: "phone" },
-                  { label: "Other Gadget", value: "other" }
+                  { label: "Other", value: "other" }
                 ]
               },
               {
                 label: "Product Image",
                 name: "image",
                 widget: "image",
-                required: false,
-                hint: "Upload a product photo (JPG/PNG recommended, at least 600×600px)"
+                required: false
               },
               {
                 label: "Description",
                 name: "description",
                 widget: "text",
-                hint: "Describe the product features, compatibility, and what's included"
+                required: false
               },
               {
-                label: "Featured on Homepage Slider",
+                label: "Featured on Homepage",
                 name: "featured",
                 widget: "boolean",
-                default: false,
-                hint: "Turn ON to show this product in the auto-scrolling homepage slider"
+                default: false
               }
             ]
           }
