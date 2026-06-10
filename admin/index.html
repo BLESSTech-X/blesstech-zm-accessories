@@ -1,61 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BLESSTech-ZM Accessories - Admin</title>
-  <style>body { margin: 0; font-family: system-ui, sans-serif; background: #0f172a; }</style>
+  <meta name="robots" content="noindex" />
+  <title>BLESSTech-ZM | Admin Panel</title>
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    body { margin: 0; font-family: sans-serif; background: #0f0f1a; }
+  </style>
 </head>
 <body>
-
-<script>window.CMS_MANUAL_INIT = true;</script>
-<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-<script>
-CMS.init({
-  config: {
-    backend: {
-      name: 'git-gateway',
-      branch: 'main'
-    },
-    media_folder: 'images',
-    public_folder: '/images',
-
-    collections: [
-      {
-        name: 'products',
-        label: '📦 Products',
-        label_singular: 'Product',
-        description: 'Add, edit, or remove products. "Featured" products appear on the homepage slider.',
-        folder: 'content/products',
-        create: true,
-        slug: '{{slug}}',
-        summary: '{{fields.title}} - ZMW {{fields.price}} {{#if fields.featured}}⭐ Featured{{/if}}',
-        fields: [
-          { label: 'Product Name', name: 'title', widget: 'string' },
-          { label: 'Price (ZMW)', name: 'price', widget: 'number', value_type: 'int' },
-          { 
-            label: 'Category', 
-            name: 'category', 
-            widget: 'select', 
-            options: ['case', 'charger', 'cable', 'earphone', 'powerbank', 'protector', 'phone', 'other'],
-            default: 'case'
-          },
-          { label: 'Product Image', name: 'image', widget: 'image' },
-          { label: 'Description', name: 'description', widget: 'text', required: false },
-          { 
-            label: '⭐ Featured Product', 
-            name: 'featured', 
-            widget: 'boolean', 
-            default: false,
-            hint: 'When checked, this product will appear in the homepage auto-scrolling slider'
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // ── SINGLE-FILE EMBEDDED CMS CONFIG ──
+    // This replaces the need for a separate admin/config.yml file.
+    // Products only – no other collections.
+    CMS.init({
+      config: {
+        backend: {
+          name: "git-gateway",
+          branch: "main"
+        },
+        media_folder: "assets/images/uploads",
+        public_folder: "/assets/images/uploads",
+        collections: [
+          {
+            name: "products",
+            label: "Products",
+            label_singular: "Product",
+            folder: "content/products",
+            create: true,
+            delete: true,
+            slug: "{{slug}}",
+            identifier_field: "title",
+            summary: "{{title}} – ZMW {{price}} ({{category}})",
+            sortable_fields: ["title", "price", "category"],
+            fields: [
+              {
+                label: "Product Name",
+                name: "title",
+                widget: "string",
+                hint: "e.g. 20W USB-C Fast Charger"
+              },
+              {
+                label: "Price (ZMW)",
+                name: "price",
+                widget: "number",
+                value_type: "float",
+                min: 0,
+                hint: "Enter price in Zambian Kwacha (ZMW)"
+              },
+              {
+                label: "Category",
+                name: "category",
+                widget: "select",
+                options: [
+                  { label: "Phone Case", value: "case" },
+                  { label: "Charger", value: "charger" },
+                  { label: "Cable", value: "cable" },
+                  { label: "Earphone / Headphone", value: "earphone" },
+                  { label: "Power Bank", value: "powerbank" },
+                  { label: "Screen Protector", value: "protector" },
+                  { label: "Phone", value: "phone" },
+                  { label: "Other Gadget", value: "other" }
+                ]
+              },
+              {
+                label: "Product Image",
+                name: "image",
+                widget: "image",
+                required: false,
+                hint: "Upload a product photo (JPG/PNG recommended, at least 600×600px)"
+              },
+              {
+                label: "Description",
+                name: "description",
+                widget: "text",
+                hint: "Describe the product features, compatibility, and what's included"
+              },
+              {
+                label: "Featured on Homepage Slider",
+                name: "featured",
+                widget: "boolean",
+                default: false,
+                hint: "Turn ON to show this product in the auto-scrolling homepage slider"
+              }
+            ]
           }
         ]
       }
-    ]
-  }
-});
-</script>
-
+    });
+  </script>
 </body>
 </html>
