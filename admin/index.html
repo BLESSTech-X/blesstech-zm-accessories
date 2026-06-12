@@ -4,53 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLESSTech-ZM Accessories - Admin</title>
-  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/zTWvRVB1/Copilot-20251230-144351.jpg" />
   <style>body { margin: 0; font-family: sans-serif; background: #0f172a; }</style>
 </head>
 <body>
 
-<script>window.CMS_MANUAL_INIT = true;</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
 <script>
-CMS.init({
-  config: {
-    backend: {
-      name: 'github',
-      repo: 'BLESSTech-X/blesstech-zm-accessories',
-      branch: 'main',
-      base_url: 'https://api.netlify.com',
-      auth_endpoint: 'auth'
-    },
-    media_folder: 'images/uploads',
-    public_folder: '/images/uploads',
-
-    collections: [
-      {
-        name: 'products',
-        label: '📦 Products',
-        label_singular: 'Product',
-        folder: 'content/products',
-        create: true,
-        slug: '{{slug}}',
-        fields: [
-          { label: 'Product Name', name: 'title', widget: 'string' },
-          { label: 'Price (ZMW)', name: 'price', widget: 'number', value_type: 'int' },
-          { 
-            label: 'Category', 
-            name: 'category', 
-            widget: 'select', 
-            options: ['case', 'charger', 'cable', 'earphone', 'powerbank', 'protector', 'phone', 'other'] 
-          },
-          { label: 'Product Image', name: 'image', widget: 'image' },
-          { label: 'Description', name: 'description', widget: 'text' },
-          { label: 'Featured (show on homepage slider)', name: 'featured', widget: 'boolean', default: false }
-        ]
-      }
-    ]
-  }
-});
+  CMS.init({
+    config: {
+      backend: {
+        name: "git-gateway",
+        branch: "main"
+      },
+      media_folder: "images/uploads",
+      public_folder: "/images/uploads",
+      collections: [
+        {
+          name: "products",
+          label: "📦 Products",
+          label_singular: "Product",
+          folder: "content/products",
+          create: true,
+          slug: "{{slug}}",
+          fields: [
+            { label: "Product Name", name: "title", widget: "string" },
+            { label: "Price (ZMW)", name: "price", widget: "number", value_type: "int" },
+            {
+              label: "Category",
+              name: "category",
+              widget: "select",
+              options: ["case", "charger", "cable", "earphone", "powerbank", "protector", "phone", "other"]
+            },
+            { label: "Product Image", name: "image", widget: "image" },
+            { label: "Description", name: "description", widget: "text" },
+            { label: "⭐ Featured on Homepage", name: "featured", widget: "boolean", default: false }
+          ]
+        }
+      ]
+    }
+  });
 </script>
-
 </body>
 </html>
