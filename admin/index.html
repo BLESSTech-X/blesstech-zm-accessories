@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLESSTech-ZM Accessories - Admin</title>
+  <!-- Netlify Identity Widget is required for git-gateway -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>body { margin: 0; font-family: sans-serif; background: #0f172a; }</style>
 </head>
 <body>
 
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
 <script>
   CMS.init({
     config: {
       backend: {
-        name: "git-gateway",
+        name: "git-gateway", // This is the correct backend for your Netlify setup
         branch: "main"
       },
       media_folder: "images/uploads",
