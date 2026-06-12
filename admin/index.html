@@ -3,92 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin — BLESSTech-ZM Accessories</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <title>BLESSTech-ZM Accessories - Admin</title>
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/zTWvRVB1/Copilot-20251230-144351.jpg" />
+  <style>body { margin: 0; font-family: sans-serif; background: #0f172a; }</style>
 </head>
 <body>
-  <script>
-    window.CMS_MANUAL_INIT = true;
-  </script>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    CMS.init({
-      config: {
-        backend: {
-          name: "git-gateway",
-          branch: "main"
-        },
-        media_folder: "images",
-        public_folder: "/images",
-        collections: [
-          {
-            name: "products",
-            label: "🛍️ Products",
-            label_singular: "Product",
-            folder: "content/products",
-            create: true,
-            delete: true,
-            slug: "{{slug}}",
-            preview_path: "product.html?id={{slug}}",
-            summary: "{{title}} — ZMW {{price}} [{{category}}]{{#if featured}} ⭐{{/if}}",
-            fields: [
-              { label: "Product Name", name: "title", widget: "string" },
-              { label: "Price (ZMW)", name: "price", widget: "number", value_type: "int" },
-              {
-                label: "Category",
-                name: "category",
-                widget: "select",
-                options: [
-                  { label: "📱 Phone Cases", value: "case" },
-                  { label: "⚡ Chargers", value: "charger" },
-                  { label: "🔌 Cables", value: "cable" },
-                  { label: "🎧 Earphones", value: "earphone" },
-                  { label: "🔋 Power Banks", value: "powerbank" },
-                  { label: "🛡️ Screen Protectors", value: "protector" },
-                  { label: "📲 Phones", value: "phone" },
-                  { label: "✨ Other", value: "other" }
-                ]
-              },
-              { label: "Product Image", name: "image", widget: "image", required: false },
-              { label: "Description", name: "description", widget: "text" },
-              { label: "⭐ Featured on Homepage", name: "featured", widget: "boolean", default: false }
-            ]
+
+<script>window.CMS_MANUAL_INIT = true;</script>
+<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+<script>
+CMS.init({
+  config: {
+    backend: {
+      name: 'github',
+      repo: 'BLESSTech-X/blesstech-zm-accessories',
+      branch: 'main',
+      base_url: 'https://api.netlify.com',
+      auth_endpoint: 'auth'
+    },
+    media_folder: 'images/uploads',
+    public_folder: '/images/uploads',
+
+    collections: [
+      {
+        name: 'products',
+        label: '📦 Products',
+        label_singular: 'Product',
+        folder: 'content/products',
+        create: true,
+        slug: '{{slug}}',
+        fields: [
+          { label: 'Product Name', name: 'title', widget: 'string' },
+          { label: 'Price (ZMW)', name: 'price', widget: 'number', value_type: 'int' },
+          { 
+            label: 'Category', 
+            name: 'category', 
+            widget: 'select', 
+            options: ['case', 'charger', 'cable', 'earphone', 'powerbank', 'protector', 'phone', 'other'] 
           },
-          {
-            name: "settings",
-            label: "⚙️ Site Settings",
-            files: [
-              {
-                label: "🏠 Homepage Content",
-                name: "homepage",
-                file: "content/settings/homepage.json",
-                fields: [
-                  { label: "Hero Line 1 (white)", name: "hero_line1", widget: "string" },
-                  { label: "Hero Line 2 (rainbow)", name: "hero_line2", widget: "string" },
-                  { label: "Hero Subtitle", name: "hero_sub", widget: "text" },
-                  { label: "Stat 1", name: "stat1", widget: "string" },
-                  { label: "Stat 2", name: "stat2", widget: "string" },
-                  { label: "Stat 3", name: "stat3", widget: "string" },
-                  { label: "Stat 4", name: "stat4", widget: "string" }
-                ]
-              },
-              {
-                label: "📞 Contact Information",
-                name: "contact",
-                file: "content/settings/contact.json",
-                fields: [
-                  { label: "WhatsApp Number", name: "whatsapp", widget: "string" },
-                  { label: "Phone Display", name: "phone", widget: "string" },
-                  { label: "Email", name: "email", widget: "string" },
-                  { label: "Location", name: "location", widget: "string" },
-                  { label: "Business Hours", name: "hours", widget: "string" }
-                ]
-              }
-            ]
-          }
+          { label: 'Product Image', name: 'image', widget: 'image' },
+          { label: 'Description', name: 'description', widget: 'text' },
+          { label: 'Featured (show on homepage slider)', name: 'featured', widget: 'boolean', default: false }
         ]
       }
-    });
-  </script>
+    ]
+  }
+});
+</script>
+
 </body>
 </html>
