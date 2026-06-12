@@ -438,6 +438,36 @@ fetchAllProducts().then(products => {
   updateCounts();
   renderProducts();
 });
+  // Add this function to fetch products from CMS
+async function fetchProductsFromCMS() {
+  try {
+    const res = await fetch('/content/products/index.json');
+    if (!res.ok) throw new Error('No products yet');
+    const files = await res.json();
+    
+    const products = await Promise.all(files.map(async (file) => {
+      const productRes = await fetch(`/content/products/${file}`);
+      const text = await productRes.text();
+      
+      return {
+        title: text.match(/title:\s*(.+)/)?.[1]?.trim() || 'Product',
+        price: parseInt(text.match(/price:\s*(\d+)/)?.[1] || '0'),
+        category: text.match(/category:\s*(.+)/)?.[1]?.trim() || 'other',
+        image: text.match(/image:\s*(.+)/)?.[1]?.trim() || '',
+        featured: text.match(/featured:\s*(true|false)/)?.[1] === 'true'
+      };
+    }));
+    
+    // Display the products on your page
+    displayProducts(products);
+    
+  } catch(error) {
+    console.log('No products in CMS yet. Add them in /admin/');
+  }
+}
+
+// Call this function when page loads
+fetchProductsFromCMS();
 </script>
 </body>
 </html>
